@@ -1,6 +1,7 @@
 import json
 from math import ceil
-
+import sys
+sys.path.append('./mxeval')
 from accelerate.utils import set_seed
 from torch.utils.data.dataloader import DataLoader
 from transformers import StoppingCriteria, StoppingCriteriaList
@@ -12,6 +13,7 @@ from tqdm import tqdm
 from mxeval.evaluate_functional_correctness import entry_point
 from mxeval.data import write_jsonl
 import time
+
 class EndOfFunctionCriteria(StoppingCriteria):
     """Custom `StoppingCriteria` which checks if all generated functions in the batch are completed."""
     def __init__(self, start_length, eof_strings, tokenizer, check_fn=None):
@@ -287,6 +289,7 @@ def normal_generations(task, dataset, accelerator, model, tokenizer, n_tasks, ar
 
 
     start_time = time.time()
+    new_token_lengths = []
     for sample in tqdm(range(args.limit_start, args.limit_start + n_tasks)):
 
         # infill = []
@@ -294,10 +297,7 @@ def normal_generations(task, dataset, accelerator, model, tokenizer, n_tasks, ar
         torch.cuda.reset_max_memory_allocated()
         if args.tasks == 'mbpp':
             
-            if args.start_retrieval_aug == False:
-                prompt_contents = task.get_prompt(dataset[sample],n_shot =args.n_shot)
-            else:
-                prompt_contents = task.get_prompt(dataset[sample],n_shot =args.n_shot,start_retrieval_aug =True)
+            prompt_contents = task.get_prompt(dataset[sample],n_shot =args.n_shot)
 
         else:
             prompt_contents = task.get_prompt(dataset[sample])
@@ -312,6 +312,8 @@ def normal_generations(task, dataset, accelerator, model, tokenizer, n_tasks, ar
         return_tensors="pt",
         return_token_type_ids=False,
         )  
+
+        prompt_token_length = batch['input_ids'].shape[1]
 
         
         batch = {k: v.to("cuda") for k, v in batch.items()}
@@ -352,6 +354,11 @@ def normal_generations(task, dataset, accelerator, model, tokenizer, n_tasks, ar
             output_text = ['<out_of_memory>']
             is_out_of_memory = True
 
+        output_token_length = outputs.shape[1]
+        new_token_length = output_token_length - prompt_token_length
+        new_token_lengths.append(new_token_length)
+        print("new_token_length:")
+        print(new_token_length)
         sample_list = []
         if not is_out_of_memory :
             for o in outputs:
@@ -368,12 +375,15 @@ def normal_generations(task, dataset, accelerator, model, tokenizer, n_tasks, ar
                     gen_codes[sample].append(output_text)
                 if 'mbxp' in args.tasks or 'humanevalx' in args.tasks:
                     mbxp_sample_list.append(dict(task_id=dataset[sample]['task_id'], language=dataset[sample]["language"], completion=task.postprocess_generation(output_text, int(sample) + args.limit_start).replace(prompt,'')))
-          
+                print("output_text:")
+                print(output_text)  
         else:
             gen_codes[sample].append(output_text)
             if 'mbxp' in args.tasks or 'humanevalx' in args.tasks:
                     mbxp_sample_list.append(dict(task_id=dataset[sample]['task_id'], language=dataset[sample]["language"], completion='<out_of_memory>'))
-               
+    print("new_token_lengths:")
+    avg_new_token_length = sum(new_token_lengths)/len(new_token_lengths)
+    print(avg_new_token_length)
     end_time = time.time()
     avg_time = (end_time-start_time)/n_tasks
     if not os.path.exists(args.save_generations_path):
@@ -381,7 +391,7 @@ def normal_generations(task, dataset, accelerator, model, tokenizer, n_tasks, ar
         os.makedirs(args.save_generations_path)
     final_ans_dir = args.save_generations_path+'/evaluation_results.json'
     with open(final_ans_dir,'w') as f:
-        json.dump({'average_time':avg_time},f)
+        json.dump({'average_time':avg_time,'average_new_token_length':avg_new_token_length},f)
     if 'mbxp' in args.tasks or 'humanevalx' in args.tasks:
         write_jsonl(args.save_generations_path+"/samples.jsonl", mbxp_sample_list)
         if 'mbxp' in args.tasks:

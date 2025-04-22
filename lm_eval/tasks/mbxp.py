@@ -38,7 +38,7 @@ class MBXP(Task):
             #"\ndef","\nassert","\nclass",'\n"""', "\nprint", "\nif", "\n<|/","\n#", "\n@"
             requires_execution=True,
         )
-        self.dataset = self.dataset["test"]
+        # self.dataset = self.dataset["test"]
         self.dataset_dir = problem_path_dict[self.DATASET_NAME]
         # self.demonstration = None
         # self.n_shot =None

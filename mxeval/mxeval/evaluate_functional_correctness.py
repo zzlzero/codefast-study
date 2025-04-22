@@ -4,10 +4,9 @@
 import sys
 import os
 
-import fire
 from mxeval.data import HUMAN_EVAL
 from mxeval.evaluation import evaluate_functional_correctness
-
+import json
 
 def entry_point(
     sample_file: str,
@@ -25,6 +24,7 @@ def entry_point(
     results = evaluate_functional_correctness(
         sample_file, k, n_workers, timeout, problem_file
     )
+    results = json.dumps(results, indent=4)
     with open(sample_file + "_passatk.json", "w") as f:
         f.write(str(results))
     print(results)

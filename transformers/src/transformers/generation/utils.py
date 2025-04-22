@@ -2560,9 +2560,9 @@ class GenerationMixin:
                         next_tokens_hidden_states =  outputs.hidden_states[-1][:, -1, :]
                         # compute 'stop' action probability
                         predict_logits = genguard_model(next_tokens_hidden_states)
-
+                        predict_prob = nn.functional.softmax(predict_logits, dim=-1)
                         if stop_threshold>0:
-                            predict_prob = nn.functional.softmax(predict_logits, dim=-1)
+                            
                             max_index = predict_prob[:, continue_label] >= 1-stop_threshold
                             max_index = max_index.long()
                         else:
