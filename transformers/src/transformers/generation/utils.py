@@ -2517,9 +2517,45 @@ class GenerationMixin:
             # argmax
             next_tokens = torch.argmax(next_tokens_scores, dim=-1)
             
+            pred_in_codeline = True
             if codefast_config_dict!=None:
+                if pred_in_codeline:
+                    # 检测当前token或下一个token是否是换行符
+                    is_current_newline = (input_ids[0][-1] == code_line_end_token)
+                    is_next_newline = (next_tokens[0] == code_line_end_token)
+                    
+                    if is_current_newline or is_next_newline:
+                        # 获取隐藏状态进行预测
+                        next_tokens_hidden_states = outputs.hidden_states[-1][:, -1, :]
+                        predict_logits = genguard_model(next_tokens_hidden_states)
+                        predict_prob = nn.functional.softmax(predict_logits, dim=-1)
+                        
+                        # 判断是否需要停止生成
+                        max_value, max_index = torch.max(predict_prob, 1)
+                        if max_index != continue_label:  # 如果预测结果不是"继续"标签
+                            unfinished_sequences[0] = 0
+                            this_peer_finished = True
+                        
+                        # 更新空行计数逻辑（保留现有的空行检测功能）
+                        if is_next_newline:
+                            # 更新行起始索引
+                            pre_code_line_start_idx = cur_code_line_start_idx
+                            cur_code_line_start_idx = input_ids.shape[1]
+                            
+                            if pre_code_line_start_idx != None:
+                                # 检测是否为空行
+                                if cur_code_line_start_idx == pre_code_line_start_idx + 1:
+                                    empty_code_line_num += 1
+                                else:
+                                    empty_code_line_num = 1
+                            
+                            # 连续空行超过3行时停止生成
+                            if empty_code_line_num > 3:
+                                unfinished_sequences[0] = 0
+                                this_peer_finished = True
+
                 #token voting mode
-                if is_convergence:
+                elif is_convergence:
                     next_tokens_hidden_states =  outputs.hidden_states[-1][:, -1, :]
                     predict_logits = genguard_model(next_tokens_hidden_states)
                 
