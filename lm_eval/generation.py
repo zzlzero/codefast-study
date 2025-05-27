@@ -243,6 +243,7 @@ def normal_generations(task, dataset, accelerator, model, tokenizer, n_tasks, ar
         model, ds_loader = accelerator.prepare(model, ds_loader)
     gen_codes=[]
     gen_codes = [[] for _ in range(n_tasks)]
+    gen_codes_without_postprocess = [[] for _ in range(n_tasks)]
     args.limit_start = 0
     mbxp_sample_list = []
     prompt_list = []
@@ -363,6 +364,7 @@ def normal_generations(task, dataset, accelerator, model, tokenizer, n_tasks, ar
         if not is_out_of_memory :
             for o in outputs:
                 output_text = tokenizer.decode(o, skip_special_tokens=True)  
+                gen_codes_without_postprocess[sample].append(output_text)
                 if args.postprocess:
                     gen_codes[sample].append(
                         task.postprocess_generation(output_text, int(sample) + args.limit_start)
@@ -392,6 +394,10 @@ def normal_generations(task, dataset, accelerator, model, tokenizer, n_tasks, ar
     final_ans_dir = args.save_generations_path+'/evaluation_results.json'
     with open(final_ans_dir,'w') as f:
         json.dump({'average_time':avg_time,'average_new_token_length':avg_new_token_length},f)
+
+    with open(args.save_generations_path + "/generations_without_postprocess.json", "w") as f:
+        json.dump(gen_codes_without_postprocess, f)
+
     if 'mbxp' in args.tasks or 'humanevalx' in args.tasks:
         write_jsonl(args.save_generations_path+"/samples.jsonl", mbxp_sample_list)
         if 'mbxp' in args.tasks:
