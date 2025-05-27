@@ -1,7 +1,9 @@
-CUDA_VISIBLE_DEVICES=2
+CUDA_VISIBLE_DEVICES=1
 mkdir -p log
 python main.py \
   --model /data/zzl/model/CodeLlama-7b-hf \
+  --additional_model models/GenGuard_Multi_PL_codellama_7b/model.pth \
+  --is_additional_model \
   --tasks mbxp \
   --language python \
   --max_new_tokens 300 \
@@ -12,7 +14,7 @@ python main.py \
   --save_generations \
   --use_auth_token \
   --use_comment \
-  --save_generations_path results/codellama_7b_mbxp_python_baseline \
+  --save_generations_path results/codellama_7b_mbxp_python_codefast \
   --precision bf16 \
   --decoding_strategy greedy \
-  2>&1 | tee log/codellama_7b_mbxp_python_baseline.log
+  2>&1 | tee log/codellama_7b_mbxp_python_codefast.log
