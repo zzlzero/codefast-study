@@ -1,0 +1,500 @@
+{"task_id": "MBJSP/11", "language": "javascript", "completion": "  return s.replace(ch, \"\").replace(ch, \"\");\n}\n"}
+{"task_id": "MBJSP/12", "language": "javascript", "completion": "  return m.sort((a, b) => a.reduce((acc, val) => acc + val) - b.reduce((acc, val) => acc + val));\n}\n"}
+{"task_id": "MBJSP/13", "language": "javascript", "completion": "  return words.reduce((acc, word) => {\n    if (acc[word]) {\n      acc[word]++;\n    } else {\n      acc[word] = 1;\n    }\n    return acc;\n  }, {});\n}\n"}
+{"task_id": "MBJSP/14", "language": "javascript", "completion": "  return l * b * h;\n}\n"}
+{"task_id": "MBJSP/15", "language": "javascript", "completion": "  return text.split(/(?=[a-z])/);\n}\n"}
+{"task_id": "MBJSP/16", "language": "javascript", "completion": "  // Your code here\n  return /^[a-z]+(_[a-z]+)*$/.test(text) ? \"Found a match!\" : \"Not matched!\";\n}\n"}
+{"task_id": "MBJSP/17", "language": "javascript", "completion": "  return a * 4;\n}\n"}
+{"task_id": "MBJSP/18", "language": "javascript", "completion": "  return string.replace(new RegExp(secondstring, \"g\"), \"\");\n}\n"}
+{"task_id": "MBJSP/19", "language": "javascript", "completion": "  return arraynums.length !== [...new Set(arraynums)].length;\n}\n"}
+{"task_id": "MBJSP/20", "language": "javascript", "completion": "  return x % 10 === 3 && x % 100 !== 33 && x % 1000 !== 333;\n}\n"}
+{"task_id": "MBJSP/21", "language": "javascript", "completion": "  return [...Array(m).keys()].map((x) => x * n);\n}\n"}
+{"task_id": "MBJSP/22", "language": "javascript", "completion": "  // your code goes here\n  let set = new Set();\n  for (let i = 0; i < nums.length; i++) {\n    if (set.has(nums[i])) return nums[i];\n    set.add(nums[i]);\n  }\n  return -1;\n}\n"}
+{"task_id": "MBJSP/23", "language": "javascript", "completion": "  return Math.max(...list1.map((list) => list.reduce((a, b) => a + b, 0)));\n}\n"}
+{"task_id": "MBJSP/24", "language": "javascript", "completion": "  return parseInt(binary, 2);\n}\n"}
+{"task_id": "MBJSP/25", "language": "javascript", "completion": "  return arr.reduce((a, b) => (a * b) / n);\n}\n"}
+{"task_id": "MBJSP/26", "language": "javascript", "completion": "  return testlist.every(arr => arr.length === k);\n}\n"}
+{"task_id": "MBJSP/27", "language": "javascript", "completion": "  return list.map(x => x.replace(/\\d/g, ''));\n}\n"}
+{"task_id": "MBJSP/28", "language": "javascript", "completion": "  return (\n    factorial(n) / (factorial(k) * factorial(n - k))\n  );\n}\n\nfunction factorial(n) {\n  if (n === 0) {\n    return 1;\n  }\n  return n * factorial(n - 1);\n}\n"}
+{"task_id": "MBJSP/29", "language": "javascript", "completion": "  return arr.filter((v, i, a) => a.indexOf(v) === i).reduce((a, b) => a + b, 0);\n}\n"}
+{"task_id": "MBJSP/30", "language": "javascript", "completion": "  // your code goes here\n  let count = 0;\n  for (let i = 0; i < s.length; i++) {\n    for (let j = i + 1; j < s.length; j++) {\n      if (s[i] === s[j]) count++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/31", "language": "javascript", "completion": "  const heap = new Heap((a, b) => b[1] - a[1]);\n  for (let i = 0; i < nums.length; i++) {\n    for (let j = 0; j < nums[i].length; j++) {\n      if (heap.size() < k) {\n        heap.push([nums[i][j], 1]);\n      } else {\n        const top = heap.peek();\n        if (top[0] !== nums[i][j]) {\n          heap.pop();\n          heap.push([nums[i][j], 1]);\n        } else {\n          heap.updateTop(1);\n        }\n      }\n    }\n  }\n  return heap.toArray().map(x => x[0]);\n}\n"}
+{"task_id": "MBJSP/32", "language": "javascript", "completion": "  // your code goes here\n  let max = 0;\n  for (let i = 2; i <= n; i++) {\n    if (n % i == 0) {\n      if (isPrime(i)) {\n        max = i;\n      }\n    }\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/33", "language": "javascript", "completion": "  return n.toString(2);\n}\n"}
+{"task_id": "MBJSP/34", "language": "javascript", "completion": "  return ar.indexOf(n) === -1 ? n : null;\n}\n"}
+{"task_id": "MBJSP/35", "language": "javascript", "completion": "  return n * (n + 1) * (2 * n + 1) / 6;\n}\n"}
+{"task_id": "MBJSP/36", "language": "javascript", "completion": "  let num = 1;\n  let den = 1;\n  let count = 0;\n  while (count < n) {\n    num *= p;\n    den *= q;\n    count += Math.floor(num / den);\n  }\n  return Math.floor(num / den) % 10;\n}\n"}
+{"task_id": "MBJSP/37", "language": "javascript", "completion": "  return mixedlist.sort();\n}\n"}
+{"task_id": "MBJSP/38", "language": "javascript", "completion": "  // your code goes here\n  return list1.filter((x, i) => i % 2 === 0).reduce((a, b) => a / b);\n}\n"}
+{"task_id": "MBJSP/39", "language": "javascript", "completion": "  const map = {};\n  for (let i = 0; i < s.length; i++) {\n    if (map[s[i]]) {\n      map[s[i]]++;\n    } else {\n      map[s[i]] = 1;\n    }\n  }\n  const arr = Object.keys(map);\n  const result = [];\n  for (let i = 0; i < arr.length; i++) {\n    if (map[arr[i]] > 1) {\n      result.push(arr[i]);\n    }\n  }\n  if (result.length > 0) {\n    return \"Impossible\";\n  }\n  const sorted = arr.sort();\n  let str = \"\";\n  for (let i = 0; i < sorted.length; i++) {\n    for (let j = 0; j < map[sorted[i]]; j++) {\n      str += sorted[i];\n    }\n  }\n  return str;\n}\n"}
+{"task_id": "MBJSP/40", "language": "javascript", "completion": "  return nums.reduce((acc, val) => {\n    val.forEach((item) => {\n      acc[item] = (acc[item] || 0) + 1;\n    });\n    return acc;\n  }, {});\n}\n"}
+{"task_id": "MBJSP/41", "language": "javascript", "completion": "  return nums.filter((num) => num % 2 === 0);\n}\n"}
+{"task_id": "MBJSP/42", "language": "javascript", "completion": "  return arr.reduce((a, b) => a + (b === n ? b : 0), 0);\n}\n"}
+{"task_id": "MBJSP/43", "language": "javascript", "completion": "  // Your code here\n  return /^[a-z]+(_[a-z]+)*$/.test(text) ? \"Found a match!\" : \"Not matched!\";\n}\n"}
+{"task_id": "MBJSP/44", "language": "javascript", "completion": "  // Your code here\n  return text.startsWith(\"python\") ? \"Found a match!\" : \"Not matched!\";\n}\n"}
+{"task_id": "MBJSP/45", "language": "javascript", "completion": "  return l.reduce((a, b) => (b === 0 ? a : getGcd([b, a % b])[1]), l[0]);\n}\n"}
+{"task_id": "MBJSP/46", "language": "javascript", "completion": "  return data.every((item, index) => data.indexOf(item) === index);\n}\n"}
+{"task_id": "MBJSP/47", "language": "javascript", "completion": "  return Math.abs(factorial(a) % factorial(b)).toString().slice(-1);\n}\n"}
+{"task_id": "MBJSP/48", "language": "javascript", "completion": "  return n | 1;\n}\n"}
+{"task_id": "MBJSP/49", "language": "javascript", "completion": "  return nums.map(arr => arr[n]);\n}\n"}
+{"task_id": "MBJSP/50", "language": "javascript", "completion": "  return [\n    inputlist.reduce((a, b) => (a.length < b.length ? a : b)).length,\n    inputlist.reduce((a, b) => (a.length < b.length ? a : b)),\n  ];\n}\n"}
+{"task_id": "MBJSP/51", "language": "javascript", "completion": "  return x === y && y === z;\n}\n"}
+{"task_id": "MBJSP/52", "language": "javascript", "completion": "  return b * h;\n}\n"}
+{"task_id": "MBJSP/53", "language": "javascript", "completion": "  // your code goes here\n  return str[0] === str[str.length - 1] ? \"Equal\" : \"Not Equal\";\n}\n"}
+{"task_id": "MBJSP/54", "language": "javascript", "completion": "  const max = Math.max(...mylist);\n  const min = Math.min(...mylist);\n  const range = max - min + 1;\n  const count = Array(range).fill(0);\n  const result = [];\n\n  for (let i = 0; i < mylist.length; i++) {\n    count[mylist[i] - min]++;\n  }\n\n  for (let i = 1; i < count.length; i++) {\n    count[i] += count[i - 1];\n  }\n\n  for (let i = mylist.length - 1; i >= 0; i--) {\n    result[count[mylist[i] - min] - 1] = mylist[i];\n    count[mylist[i] - min]--;\n  }\n\n  return result;\n}\n"}
+{"task_id": "MBJSP/55", "language": "javascript", "completion": "  return a * Math.pow(r, n - 1);\n}\n"}
+{"task_id": "MBJSP/56", "language": "javascript", "completion": "  return n === n.toString().split('').reverse().join('') - 1;\n}\n"}
+{"task_id": "MBJSP/57", "language": "javascript", "completion": "  return Number(arr.slice(0, n).join(''));\n}\n"}
+{"task_id": "MBJSP/58", "language": "javascript", "completion": "  return (x > 0 && y < 0) || (x < 0 && y > 0);\n}\n"}
+{"task_id": "MBJSP/59", "language": "javascript", "completion": "  // Your code here\n  return Math.sqrt(2 * n * (n + 1))\n}\n"}
+{"task_id": "MBJSP/60", "language": "javascript", "completion": "  let max = 0;\n  for (let i = 0; i < arr.length; i++) {\n    let count = 1;\n    for (let j = i + 1; j < arr.length; j++) {\n      if (Math.abs(arr[i] - arr[j]) <= n) {\n        count++;\n      }\n    }\n    max = Math.max(max, count);\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/61", "language": "javascript", "completion": "  // your code goes here\n  let count = 0;\n  for (let i = 0; i < s.length; i++) {\n    let sum = 0;\n    for (let j = i; j < s.length; j++) {\n      sum += Number(s[j]);\n      if (sum === n) count++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/62", "language": "javascript", "completion": "  return Math.min.apply(null, xs);\n}\n"}
+{"task_id": "MBJSP/63", "language": "javascript", "completion": "  return Math.max(...testlist.map(([a, b]) => b - a));\n}\n"}
+{"task_id": "MBJSP/64", "language": "javascript", "completion": "  return subjectmarks.sort((a, b) => a[1] - b[1]);\n}\n"}
+{"task_id": "MBJSP/65", "language": "javascript", "completion": "  return datalist.reduce((acc, val) => {\n    if (Array.isArray(val)) {\n      return acc + recursiveListSum(val);\n    }\n    return acc + val;\n  }, 0);\n}\n"}
+{"task_id": "MBJSP/66", "language": "javascript", "completion": "  // your code here\n  return list.filter((x) => x > 0).length;\n}\n"}
+{"task_id": "MBJSP/67", "language": "javascript", "completion": "  if (n === 0) return 1;\n  if (n === 1) return 1;\n  return bellNumber(n - 1) + bellNumber(n - 2);\n}\n"}
+{"task_id": "MBJSP/68", "language": "javascript", "completion": "  return a.every((v, i) => v >= a[i - 1]);\n}\n"}
+{"task_id": "MBJSP/69", "language": "javascript", "completion": "  return l.indexOf(s[0]) !== -1 && l.indexOf(s[0]) + s.length <= l.length;\n}\n"}
+{"task_id": "MBJSP/70", "language": "javascript", "completion": "  return input.every(x => x.length === k) ? \"All tuples have same length\" : \"All tuples do not have same length\";\n}\n"}
+{"task_id": "MBJSP/71", "language": "javascript", "completion": "  let gap = nums.length;\n  let swapped = true;\n\n  while (gap > 1 || swapped) {\n    if (gap > 1) {\n      gap = Math.floor(gap / 1.3);\n    }\n\n    swapped = false;\n\n    for (let i = 0; i + gap < nums.length; i++) {\n      if (nums[i] > nums[i + gap]) {\n        [nums[i], nums[i + gap]] = [nums[i + gap], nums[i]];\n        swapped = true;\n      }\n    }\n  }\n\n  return nums;\n}\n"}
+{"task_id": "MBJSP/72", "language": "javascript", "completion": "  // your code goes here\n  let sq = Math.sqrt(n);\n  return sq % 1 === 0;\n}\n"}
+{"task_id": "MBJSP/73", "language": "javascript", "completion": "\treturn text.split(/\\s+|\\*+/g);\n}\n"}
+{"task_id": "MBJSP/74", "language": "javascript", "completion": "  return colors.every((color, i) => color === patterns[i]);\n}\n"}
+{"task_id": "MBJSP/75", "language": "javascript", "completion": "  return testlist.filter(t => t.every(n => n % k === 0)).toString();\n}\n"}
+{"task_id": "MBJSP/76", "language": "javascript", "completion": "  return m * n;\n}\n\n"}
+{"task_id": "MBJSP/77", "language": "javascript", "completion": "  // your code goes here\n  return (n % 10 + n % 100 + n % 1000 + n % 10000 + n % 100000 + n % 1000000) % 2 !== 0;\n}\n"}
+{"task_id": "MBJSP/78", "language": "javascript", "completion": "  // your code goes here\n  let count = 0;\n  for (let i = 1; i <= n; i++) {\n    let bin = i.toString(2);\n    let countBits = 0;\n    for (let j = 0; j < bin.length; j++) {\n      if (bin[j] === \"1\") countBits++;\n    }\n    if (countBits % 2 !== 0) count++;\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/79", "language": "javascript", "completion": "  return s.length % 2 !== 0;\n}\n"}
+{"task_id": "MBJSP/80", "language": "javascript", "completion": "  return (n * (n + 1) * (n + 2)) / 6;\n}\n"}
+{"task_id": "MBJSP/81", "language": "javascript", "completion": "  return testtup1.map((val, idx) => [val, testtup2[idx]]);\n}\n"}
+{"task_id": "MBJSP/82", "language": "javascript", "completion": "  return (4 / 3) * Math.PI * Math.pow(r, 3);\n}\n"}
+{"task_id": "MBJSP/83", "language": "javascript", "completion": "  // your code goes here\n  return strr.split(\"\").reduce((a, b) => a + b);\n}\n"}
+{"task_id": "MBJSP/84", "language": "javascript", "completion": "  if (n === 1) return 1;\n  if (n === 2) return 1;\n  return sequence(sequence(n - 1)) + sequence(sequence(n - 2));\n}\n"}
+{"task_id": "MBJSP/85", "language": "javascript", "completion": "  return 4 * Math.PI * r * r;\n}\n"}
+{"task_id": "MBJSP/86", "language": "javascript", "completion": "  return (2 * n * (n + 1) - n) / 2;\n}\n"}
+{"task_id": "MBJSP/87", "language": "javascript", "completion": "  return Object.assign({}, dict1, dict2, dict3);\n}\n"}
+{"task_id": "MBJSP/88", "language": "javascript", "completion": "  return list1.reduce((acc, curr) => {\n    acc[curr] = (acc[curr] || 0) + 1;\n    return acc;\n  }, {});\n}\n"}
+{"task_id": "MBJSP/89", "language": "javascript", "completion": "  return Math.floor(n);\n}\n"}
+{"task_id": "MBJSP/90", "language": "javascript", "completion": "  return Math.max(...list1.map(x => x.length));\n}\n"}
+{"task_id": "MBJSP/91", "language": "javascript", "completion": "  return str1.some(str => str.includes(substr));\n}\n"}
+{"task_id": "MBJSP/92", "language": "javascript", "completion": "  return n.split(\"\").reduce((a, b, i) => a + b === n[i + 1] && a + b, 0) > 0;\n}\n"}
+{"task_id": "MBJSP/93", "language": "javascript", "completion": "  return Math.pow(a, b);\n}\n"}
+{"task_id": "MBJSP/94", "language": "javascript", "completion": "  return testlist.reduce((a, b) => (a[1] < b[1] ? a : b))[0];\n}\n"}
+{"task_id": "MBJSP/95", "language": "javascript", "completion": "  return Math.min(...lst.map(a => a.length));\n}\n"}
+{"task_id": "MBJSP/96", "language": "javascript", "completion": "  // your code goes here\n  return n === 1 ? 1 : n % 2 === 0 ? n / 2 + 1 : n / 2 + 2;\n}\n"}
+{"task_id": "MBJSP/97", "language": "javascript", "completion": "  return list1.reduce((acc, list) => {\n    list.forEach((item) => {\n      acc[item] = (acc[item] || 0) + 1;\n    });\n    return acc;\n  }, {});\n}\n"}
+{"task_id": "MBJSP/98", "language": "javascript", "completion": "  // Your code here\n  return numbers.reduce((a, b) => a * b) / numbers.length;\n}\n"}
+{"task_id": "MBJSP/99", "language": "javascript", "completion": "\treturn n.toString(2);\n}\n"}
+{"task_id": "MBJSP/100", "language": "javascript", "completion": "  // your code goes here\n  let str = num.toString();\n  let len = str.length;\n  let mid = Math.floor(len / 2);\n  let left = str.slice(0, mid);\n  let right = str.slice(mid);\n  right = right.split(\"\").reverse().join(\"\");\n  if (left === right) {\n    return Number(str) + 1;\n  } else {\n    return Number(left + right);\n  }\n}\n"}
+{"task_id": "MBJSP/101", "language": "javascript", "completion": "  return arr.sort((a, b) => a - b)[n - 1];\n}\n"}
+{"task_id": "MBJSP/102", "language": "javascript", "completion": "  return word.replace(/([-_][a-z])/gi, ($1) => $1.toUpperCase().replace(\"-\", \"\").replace(\"_\", \"\"));\n}\n"}
+{"task_id": "MBJSP/103", "language": "javascript", "completion": "  return (n * (n - 1)) / 2 + m;\n}\n"}
+{"task_id": "MBJSP/104", "language": "javascript", "completion": "  return inputlist.map(list => list.sort());\n}\n"}
+{"task_id": "MBJSP/105", "language": "javascript", "completion": "  // your code here\n  return lst.filter(Boolean).length;\n}\n"}
+{"task_id": "MBJSP/106", "language": "javascript", "completion": "  return testtup.concat(testlist);\n}\n"}
+{"task_id": "MBJSP/107", "language": "javascript", "completion": "  // your code goes here\n  return (r - l + 1) / 2;\n}\n"}
+{"task_id": "MBJSP/108", "language": "javascript", "completion": "  const heap = [];\n  const result = [];\n\n  function pushToHeap(arr) {\n    for (let i = 0; i < arr.length; i += 1) {\n      heap.push(arr[i]);\n    }\n  }\n\n  function popFromHeap() {\n    const min = heap.shift();\n    result.push(min);\n  }\n\n  function heapify() {\n    let i = 0;\n    while (2 * i + 1 < heap.length) {\n      let min = i;\n      const left = 2 * i + 1;\n      const right = 2 * i + 2;\n      if (heap[left] < heap[min]) {\n        min = left;\n      }\n      if (heap[right] < heap[min]) {\n        min = right;\n      }\n      if (min !== i) {\n        [heap[i], heap[min]] = [heap[min], heap[i]];\n        i = min;\n      } else {\n        break;\n      }\n    }\n  }\n\n  pushToHeap(num1);\n  pushToHeap(num2);\n  pushToHeap(num3);\n\n  while (heap.length"}
+{"task_id": "MBJSP/109", "language": "javascript", "completion": "  // your code goes here\n  let count = 0;\n  for (let i = 0; i < n; i++) {\n    s = s.substring(1) + s.charAt(0);\n    if (s.match(/1/g).length % 2 === 1) count++;\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/110", "language": "javascript", "completion": "  return testlist.map(function (range) {\n    return [Math.max(strtval, range[0]), Math.min(stopval, range[1])];\n  }).concat(\n    [\n      [Math.max(strtval, testlist[testlist.length - 1][1]), stopval],\n      [strtval, Math.min(stopval, testlist[0][0])]\n    ]\n      .filter(function (range) {\n        return range[0] < range[1];\n      })\n      .map(function (range) {\n        return [range[0], range[1]];\n      })\n  );\n}\n"}
+{"task_id": "MBJSP/111", "language": "javascript", "completion": "  return nestedlist.reduce((a, b) => a.filter(x => b.includes(x)));\n}\n"}
+{"task_id": "MBJSP/112", "language": "javascript", "completion": "  return 2 * (diameter + height);\n}\n"}
+{"task_id": "MBJSP/113", "language": "javascript", "completion": "  return /^\\d+$/.test(text);\n}\n"}
+{"task_id": "MBJSP/114", "language": "javascript", "completion": "  return testlist.map(a => `[${a.join(', ')}, ${a.length}]`);\n}\n"}
+{"task_id": "MBJSP/115", "language": "javascript", "completion": "  return list1.every(item => Object.keys(item).length === 0);\n}\n"}
+{"task_id": "MBJSP/116", "language": "javascript", "completion": "  return nums.reduce((a, b) => a * 10 + b);\n}\n"}
+{"task_id": "MBJSP/117", "language": "javascript", "completion": "  return testlist.map(x => x.map(y => parseFloat(y)));\n}\n"}
+{"task_id": "MBJSP/118", "language": "javascript", "completion": "  return string.split(\" \");\n}\n"}
+{"task_id": "MBJSP/119", "language": "javascript", "completion": "  return arr.filter((x) => x !== n).pop();\n}\n"}
+{"task_id": "MBJSP/120", "language": "javascript", "completion": "  return Math.max(...list1.map(([a, b]) => a * b));\n}\n"}
+{"task_id": "MBJSP/121", "language": "javascript", "completion": "  // your code goes here\n  let count1 = 0;\n  for (let i = 0; i < a.length; i++) {\n    for (let j = i + 1; j < a.length; j++) {\n      for (let k = j + 1; k < a.length; k++) {\n        if (a[i] + a[j] + a[k] == sum) {\n          count1++;\n        }\n      }\n    }\n  }\n  return count1 >= count;\n}\n"}
+{"task_id": "MBJSP/122", "language": "javascript", "completion": "  return 30 * Math.pow(2, n - 1);\n}\n"}
+{"task_id": "MBJSP/123", "language": "javascript", "completion": "  let sum = 0;\n  for (let i = 1; i <= limit; i++) {\n    const sumOfDivisors = sumOfDivisorsOf(i);\n    if (sumOfDivisors !== i && sumOfDivisors === sumOfDivisorsOf(sumOfDivisors)) {\n      sum += i;\n    }\n  }\n  return sum;\n}\n\nfunction sumOfDivisorsOf(number) {\n  let sum = 1;\n  for (let i = 2; i <= number / 2; i++) {\n    if (number % i === 0) {\n      sum += i;\n    }\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/125", "language": "javascript", "completion": "  let count = 0;\n  let max = 0;\n  for (let i = 0; i < n; i++) {\n    if (string[i] === \"0\") {\n      count++;\n    } else {\n      count--;\n    }\n    max = Math.max(max, count);\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/126", "language": "javascript", "completion": "  return (a * b) / (a + b);\n}\n"}
+{"task_id": "MBJSP/127", "language": "javascript", "completion": "  return x * y;\n}\n"}
+{"task_id": "MBJSP/128", "language": "javascript", "completion": "  return str.split(\" \").filter(word => word.length > n);\n}\n"}
+{"task_id": "MBJSP/129", "language": "javascript", "completion": "  // your code goes here\n  let sum = 0;\n  for (let i = 0; i < mymatrix.length; i++) {\n    sum += mymatrix[i].reduce((a, b) => a + b);\n  }\n  if (sum !== 30) return false;\n  for (let i = 0; i < mymatrix.length; i++) {\n    let rowSum = 0;\n    for (let j = 0; j < mymatrix[i].length; j++) {\n      rowSum += mymatrix[i][j];\n    }\n    if (rowSum !== 30) return false;\n  }\n  for (let i = 0; i < mymatrix.length; i++) {\n    let colSum = 0;\n    for (let j = 0; j < mymatrix[i].length; j++) {\n      colSum += mymatrix[j][i];\n    }\n    if (colSum !== 30) return false;\n  }\n  return true;\n}\n"}
+{"task_id": "MBJSP/130", "language": "javascript", "completion": "  return nums.reduce((acc, curr) => {\n    if (acc[0] < nums.filter(x => x === curr).length) {\n      acc[0] = nums.filter(x => x === curr).length;\n      acc[1] = curr;\n    }\n    return acc;\n  }, [0, null]).reverse();\n}\n"}
+{"task_id": "MBJSP/131", "language": "javascript", "completion": "  // your code goes here\n  let vowels = \"aeiouAEIOU\";\n  let result = \"\";\n  for (let i = 0; i < str1.length; i++) {\n    if (vowels.includes(str1[i])) {\n      result = str1[i] + result;\n    } else {\n      result = result + str1[i];\n    }\n  }\n  return result;\n}\n"}
+{"task_id": "MBJSP/132", "language": "javascript", "completion": "  return tup1.join(\"\");\n}\n"}
+{"task_id": "MBJSP/133", "language": "javascript", "completion": "  // Your code here\n  return nums.filter(x => x < 0).reduce((a, b) => a + b, 0);\n}\n"}
+{"task_id": "MBJSP/134", "language": "javascript", "completion": "  return (arr[arr.length - 1] % (n * p)) ? \"ODD\" : \"EVEN\";\n}\n"}
+{"task_id": "MBJSP/135", "language": "javascript", "completion": "  return n * (2 * n - 1);\n}\n"}
+{"task_id": "MBJSP/136", "language": "javascript", "completion": "  return units * 0.15 + 100;\n}\n"}
+{"task_id": "MBJSP/137", "language": "javascript", "completion": "  return nums.filter(num => num === 0).length / nums.length;\n}\n"}
+{"task_id": "MBJSP/138", "language": "javascript", "completion": "  return n === 0 || (n & (n - 1)) === 0;\n}\n"}
+{"task_id": "MBJSP/139", "language": "javascript", "completion": "  return 2 * Math.PI * r;\n}\n"}
+{"task_id": "MBJSP/140", "language": "javascript", "completion": "  return testlist.reduce((a, b) => a.concat(b.filter(x => !a.includes(x))), []);\n}\n"}
+{"task_id": "MBJSP/141", "language": "javascript", "completion": "  const sorted = nums.slice().sort((a, b) => a - b);\n  const result = [];\n  while (nums.length) {\n    const index = nums.indexOf(sorted[0]);\n    if (index === 0) {\n      result.push(nums.shift());\n    } else {\n      result.push(nums.splice(index, 1)[0]);\n      result.push(nums.shift());\n    }\n  }\n  return result;\n}\n"}
+{"task_id": "MBJSP/142", "language": "javascript", "completion": "  return list1.filter((v, i) => v === list2[i] && v === list3[i]).length;\n}\n"}
+{"task_id": "MBJSP/143", "language": "javascript", "completion": "  return input.filter(x => Array.isArray(x)).length;\n}\n"}
+{"task_id": "MBJSP/144", "language": "javascript", "completion": "  return arr.reduce((a, b) => a + Math.abs(b - n), 0);\n}\n"}
+{"task_id": "MBJSP/145", "language": "javascript", "completion": "  return Math.max(...arr.map((x) => Math.abs(x - n)));\n}\n"}
+{"task_id": "MBJSP/146", "language": "javascript", "completion": "  // Your code goes here\n  return str1.split(\"\").reduce((a, b) => a + b.charCodeAt(0), 0);\n}\n"}
+{"task_id": "MBJSP/147", "language": "javascript", "completion": "  let max = -Infinity;\n  for (let i = 0; i < m; i++) {\n    for (let j = 0; j <= i; j++) {\n      if (i === 0 && j === 0) {\n        max = tri[i][j];\n      } else if (i === 0) {\n        max = Math.max(max, tri[i][j]);\n      } else if (j === 0) {\n        max = Math.max(max, tri[i][j] + tri[i - 1][j]);\n      } else {\n        max = Math.max(max, tri[i][j] + Math.max(tri[i - 1][j], tri[i - 1][j - 1]));\n      }\n    }\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/148", "language": "javascript", "completion": "  return Math.max(n - Math.floor(n / 10), Math.floor(n / 10));\n}\n"}
+{"task_id": "MBJSP/149", "language": "javascript", "completion": "  let max = 0;\n  for (let i = 0; i < arr.length; i++) {\n    let count = 1;\n    for (let j = i + 1; j < arr.length; j++) {\n      if (arr[j] - arr[i] === 1) {\n        count++;\n      } else {\n        break;\n      }\n    }\n    max = Math.max(max, count);\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/150", "language": "javascript", "completion": "  return a === b || b === c || c === a;\n}\n"}
+{"task_id": "MBJSP/151", "language": "javascript", "completion": "  return (x * y) % Math.gcd(x, y) === 1;\n}\n"}
+{"task_id": "MBJSP/152", "language": "javascript", "completion": "  if (x.length <= 1) return x;\n  const mid = Math.floor(x.length / 2);\n  const left = x.slice(0, mid);\n  const right = x.slice(mid);\n  return merge(mergeSort(left), mergeSort(right));\n}\n\nfunction merge(left, right) {\n  const result = [];\n  while (left.length && right.length) {\n    if (left[0] < right[0]) {\n      result.push(left.shift());\n    } else {\n      result.push(right.shift());\n    }\n  }\n  return result.concat(left).concat(right);\n}\n"}
+{"task_id": "MBJSP/153", "language": "javascript", "completion": "  return [-b / (2 * a), c / a];\n}\n"}
+{"task_id": "MBJSP/154", "language": "javascript", "completion": "  return nums.map(arr => arr[n]);\n}\n"}
+{"task_id": "MBJSP/155", "language": "javascript", "completion": "  return n ^ (n & (n >> 1));\n}\n"}
+{"task_id": "MBJSP/156", "language": "javascript", "completion": "  return tuplestr.map(x => x.map(y => parseInt(y)));\n}\n"}
+{"task_id": "MBJSP/157", "language": "javascript", "completion": "  return list1.map((x) => [list1.filter((y) => y === x).length, x]);\n}\n"}
+{"task_id": "MBJSP/158", "language": "javascript", "completion": "  // your code goes here\n  let sum = arr.reduce((a, b) => a + b, 0);\n  let diff = sum / n - k;\n  return Math.abs(diff);\n}\n"}
+{"task_id": "MBJSP/159", "language": "javascript", "completion": "  let season = \"\";\n  if (month === \"January\" || month === \"February\" || month === \"March\") {\n    season = \"winter\";\n  } else if (month === \"April\" || month === \"May\" || month === \"June\") {\n    season = \"spring\";\n  } else if (month === \"July\" || month === \"August\" || month === \"September\") {\n    season = \"summer\";\n  } else if (month === \"October\" || month === \"November\" || month === \"December\") {\n    season = \"autumn\";\n  }\n  return season;\n}\n"}
+{"task_id": "MBJSP/160", "language": "javascript", "completion": "  if (a * b === n) return [\"x = \", 0, \", y = \", 0];\n  if (a * b !== n) {\n    const x = n / b;\n    const y = n / a;\n    return [\"x = \", x, \", y = \", y];\n  }\n  return \"No solution\";\n}\n"}
+{"task_id": "MBJSP/161", "language": "javascript", "completion": "  return list1.filter(x => !list2.includes(x));\n}\n"}
+{"task_id": "MBJSP/162", "language": "javascript", "completion": "  // Your code here\n  let sum = 0;\n  for (let i = n; i > 0; i -= 2) {\n    sum += i;\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/163", "language": "javascript", "completion": "  return (s * l) / (4 * Math.tan(Math.PI / s));\n}\n"}
+{"task_id": "MBJSP/164", "language": "javascript", "completion": "  return (num1 % Math.floor(num1 / 2) === num2 % Math.floor(num2 / 2));\n}\n"}
+{"task_id": "MBJSP/165", "language": "javascript", "completion": "  // your code goes here\n  let count = 0;\n  for (let i = 0; i < str1.length; i++) {\n    if (str1[i] === str1[i].toLowerCase()) {\n      count++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/166", "language": "javascript", "completion": "  return a.reduce((acc, curr) => (curr ^ n) % 2 === 0 ? acc + 1 : acc, 0);\n}\n"}
+{"task_id": "MBJSP/167", "language": "javascript", "completion": "  return Math.pow(2, Math.ceil(Math.log2(n)));\n}\n"}
+{"task_id": "MBJSP/168", "language": "javascript", "completion": "  return a.reduce((acc, curr) => (curr === x ? acc + 1 : acc), 0);\n}\n"}
+{"task_id": "MBJSP/169", "language": "javascript", "completion": "  // Your code here\n  let a = 0;\n  let b = 1;\n  for (let i = 0; i < n - 1; i++) {\n    let c = a + b;\n    a = b;\n    b = c;\n  }\n  return b;\n}\n"}
+{"task_id": "MBJSP/170", "language": "javascript", "completion": "  return list1.slice(m, n + 1).reduce((a, b) => a + b);\n}\n"}
+{"task_id": "MBJSP/171", "language": "javascript", "completion": "  return a * 5;\n}\n"}
+{"task_id": "MBJSP/172", "language": "javascript", "completion": "\treturn (s.match(/std/g) || []).length;\n}\n"}
+{"task_id": "MBJSP/173", "language": "javascript", "completion": "\treturn text.replace(/[^a-zA-Z0-9]/g, \"\");\n}\n"}
+{"task_id": "MBJSP/174", "language": "javascript", "completion": "  return l.reduce((a, [k, v]) => (a[k] = (a[k] || []).concat(v), a), {});\n}\n"}
+{"task_id": "MBJSP/175", "language": "javascript", "completion": "  let stack = [];\n  for (let i = 0; i < str1.length; i++) {\n    if (str1[i] === \"(\" || str1[i] === \"{\" || str1[i] === \"[\") {\n      stack.push(str1[i]);\n    } else {\n      if (stack.length === 0) {\n        return false;\n      }\n      let last = stack.pop();\n      if (\n        (str1[i] === \")\" && last !== \"(\") ||\n        (str1[i] === \"}\" && last !== \"{\") ||\n        (str1[i] === \"]\" && last !== \"[\")\n      ) {\n        return false;\n      }\n    }\n  }\n  return stack.length === 0;\n}\n"}
+{"task_id": "MBJSP/176", "language": "javascript", "completion": "  return a + b + c;\n}\n"}
+{"task_id": "MBJSP/177", "language": "javascript", "completion": "  // your code goes here\n  let lcm = 1;\n  for (let i = l; i <= r; i++) {\n    if (lcm % i !== 0) {\n      lcm = lcm * i;\n    }\n  }\n  let arr = [];\n  for (let i = l; i <= r; i++) {\n    if (lcm % i === 0) {\n      arr.push(i);\n    }\n  }\n  return arr;\n}\n"}
+{"task_id": "MBJSP/178", "language": "javascript", "completion": "  return patterns.some(pattern => text.includes(pattern)) ? \"Matched!\" : \"Not Matched!\";\n}\n"}
+{"task_id": "MBJSP/179", "language": "javascript", "completion": "  return x % 11 === 0;\n}\n"}
+{"task_id": "MBJSP/180", "language": "javascript", "completion": "  const R = 6371; // km\n  const dLat = (elat - slat) * Math.PI / 180;\n  const dLon = (elon - slon) * Math.PI / 180;\n  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +\n    Math.cos(slat * Math.PI / 180) * Math.cos(elat * Math.PI / 180) *\n    Math.sin(dLon / 2) * Math.sin(dLon / 2);\n  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));\n  return R * c;\n}\n"}
+{"task_id": "MBJSP/181", "language": "javascript", "completion": "  let prefix = arr[0];\n  for (let i = 1; i < n; i++) {\n    while (arr[i].indexOf(prefix) !== 0) {\n      prefix = prefix.slice(0, -1);\n    }\n  }\n  return prefix;\n}\n"}
+{"task_id": "MBJSP/182", "language": "javascript", "completion": "\tlet uppercase = string.match(/[A-Z]/g) || [];\n\tlet lowercase = string.match(/[a-z]/g) || [];\n\tlet special = string.match(/[^a-zA-Z0-9]/g) || [];\n\tlet numeric = string.match(/[0-9]/g) || [];\n\treturn [uppercase, lowercase, special, numeric];\n}\n"}
+{"task_id": "MBJSP/183", "language": "javascript", "completion": "  let count = 0;\n  for (let i = 0; i < arr.length; i++) {\n    for (let j = i + 1; j < arr.length; j++) {\n      if (Math.abs(arr[i] - arr[j]) === k) {\n        count++;\n      }\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/184", "language": "javascript", "completion": "  // Your code here\n  return list.every(x => x > num);\n}\n"}
+{"task_id": "MBJSP/185", "language": "javascript", "completion": "  return [-(b / (4 * a)), c / (4 * a)];\n}\n"}
+{"task_id": "MBJSP/186", "language": "javascript", "completion": "  return patterns.some(pattern => text.match(new RegExp(pattern, \"i\"))) ? \"Matched!\" : \"Not Matched!\";\n}\n"}
+{"task_id": "MBJSP/187", "language": "javascript", "completion": "  let dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));\n\n  for (let i = 1; i <= m; i++) {\n    for (let j = 1; j <= n; j++) {\n      if (x[i - 1] === y[j - 1]) {\n        dp[i][j] = dp[i - 1][j - 1] + 1;\n      } else {\n        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);\n      }\n    }\n  }\n\n  return dp[m][n];\n}\n"}
+{"task_id": "MBJSP/188", "language": "javascript", "completion": "  // your code goes here\n  let sq = Math.sqrt(n);\n  return sq % 1 === 0;\n}\n"}
+{"task_id": "MBJSP/189", "language": "javascript", "completion": "  // your code here\n  for (let i = 0; i < n; i++) {\n    if (arr[i] <= 0 || arr[i] > n) {\n      arr[i] = n + 1;\n    }\n  }\n  for (let i = 0; i < n; i++) {\n    if (arr[i] > 0 && arr[i] <= n && arr[arr[i] - 1] != arr[i]) {\n      let temp = arr[i];\n      arr[i] = arr[arr[i] - 1];\n      arr[temp - 1] = temp;\n    }\n  }\n  for (let i = 0; i < n; i++) {\n    if (arr[i] != i + 1) {\n      return i + 1;\n    }\n  }\n  return n + 1;\n}\n"}
+{"task_id": "MBJSP/190", "language": "javascript", "completion": "  return (x2 - x1 + 1) * (y2 - y1 + 1);\n}\n"}
+{"task_id": "MBJSP/191", "language": "javascript", "completion": "  return monthname3.length === 30;\n}\n"}
+{"task_id": "MBJSP/192", "language": "javascript", "completion": "  return /^(?=.*[a-zA-Z])(?=.*[0-9])/.test(str);\n}\n"}
+{"task_id": "MBJSP/193", "language": "javascript", "completion": "  return [...new Set(testtup)];\n}\n"}
+{"task_id": "MBJSP/194", "language": "javascript", "completion": "  return parseInt(n, 8);\n}\n"}
+{"task_id": "MBJSP/195", "language": "javascript", "completion": "  return arr.indexOf(x, 0, n);\n}\n"}
+{"task_id": "MBJSP/196", "language": "javascript", "completion": "  return testlist.filter(x => x.length !== k);\n}\n"}
+{"task_id": "MBJSP/197", "language": "javascript", "completion": "  return testtup1.map((val, idx) => val ** testtup2[idx]);\n}\n"}
+{"task_id": "MBJSP/198", "language": "javascript", "completion": "  return Math.sqrt(a * a * b * b / (4 * (a * a - b * b)))\n}\n"}
+{"task_id": "MBJSP/199", "language": "javascript", "completion": "  return Math.pow(2, Math.floor(Math.log2(n)));\n}\n"}
+{"task_id": "MBJSP/200", "language": "javascript", "completion": "  return list1.map((item, index) => list1.indexOf(Math.max(...list1)) === index ? index : null).filter(item => item !== null);\n}\n"}
+{"task_id": "MBJSP/201", "language": "javascript", "completion": "  return lst.every(function(item) {\n    return item === lst[0];\n  });\n}\n"}
+{"task_id": "MBJSP/202", "language": "javascript", "completion": "\treturn str1.replace(/[02468]/g, \"\");\n}\n"}
+{"task_id": "MBJSP/203", "language": "javascript", "completion": "  return (n1 ^ n2).toString(2).replace(/0/g, '').length;\n}\n"}
+{"task_id": "MBJSP/204", "language": "javascript", "completion": "  return s.split(\"\").filter(x => x === c).length;\n}\n"}
+{"task_id": "MBJSP/205", "language": "javascript", "completion": "  // your code goes here\n  let res = [];\n  for (let i = 0; i < testtup.length; i++) {\n    for (let j = i + 1; j < testtup.length; j++) {\n      if (testtup[i] > testtup[j]) {\n        res.push(testtup[i] - testtup[j]);\n      }\n    }\n  }\n  return res;\n}\n"}
+{"task_id": "MBJSP/206", "language": "javascript", "completion": "\treturn testtup.map((val, idx) => (idx === testtup.length - 1 ? val : val + testtup[idx + 1]));\n}\n"}
+{"task_id": "MBJSP/207", "language": "javascript", "completion": "  let longest = 0;\n  for (let i = 0; i < str.length; i++) {\n    for (let j = i + 1; j < str.length; j++) {\n      let count = 0;\n      for (let k = 0; k < str.length; k++) {\n        if (str[i] === str[k] && str[j] === str[k]) {\n          count++;\n        }\n      }\n      if (count > longest) {\n        longest = count;\n      }\n    }\n  }\n  return longest;\n}\n"}
+{"task_id": "MBJSP/208", "language": "javascript", "completion": "  return /^\\d+(\\.\\d{1,2})?$/.test(num);\n}\n"}
+{"task_id": "MBJSP/209", "language": "javascript", "completion": "  // Your code here\n  heap[0] = a;\n  heapify(heap, 0);\n  return heap;\n}\n"}
+{"task_id": "MBJSP/210", "language": "javascript", "completion": "  return /^[a-z0-9]+$/i.test(string);\n}\n"}
+{"task_id": "MBJSP/211", "language": "javascript", "completion": "  return (n & (n >> 1)) + (n & (n >> 2)) + (n & (n >> 3)) + (n & (n >> 4)) + (n & (n >> 5)) + (n & (n >> 6)) + (n & (n >> 7));\n}\n"}
+{"task_id": "MBJSP/212", "language": "javascript", "completion": "  // your code goes here\n  let sum = 0;\n  for (let i = 1; i <= n; i++) {\n    sum += Math.pow(i, 4);\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/213", "language": "javascript", "completion": "  return testtup1.map((val, idx) => val + testtup2[idx]);\n}\n"}
+{"task_id": "MBJSP/214", "language": "javascript", "completion": "  return radian * (180 / Math.PI);\n}\n"}
+{"task_id": "MBJSP/215", "language": "javascript", "completion": "  return alist.map(function(item) {\n    if (Array.isArray(item)) {\n      return Array(item[0]).fill(item[1]);\n    } else {\n      return item;\n    }\n  }).reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n}\n"}
+{"task_id": "MBJSP/216", "language": "javascript", "completion": "  return list2.every(list => list1.some(item => JSON.stringify(item) === JSON.stringify(list)));\n}\n"}
+{"task_id": "MBJSP/217", "language": "javascript", "completion": "  return str.split('').filter((char, index, arr) => arr.indexOf(char) !== index).join('');\n}\n"}
+{"task_id": "MBJSP/218", "language": "javascript", "completion": "  return Math.abs(a - b);\n}\n"}
+{"task_id": "MBJSP/219", "language": "javascript", "completion": "  return testtup.sort((a, b) => a - b).slice(0, k);\n}\n"}
+{"task_id": "MBJSP/220", "language": "javascript", "completion": "  return text.replace(new RegExp(`\\\\s{1,${n}}`, \"g\"), \":\");\n}\n"}
+{"task_id": "MBJSP/221", "language": "javascript", "completion": "  return nums.find(num => num % 2 === 0);\n}\n"}
+{"task_id": "MBJSP/222", "language": "javascript", "completion": "  return testtuple.every((x) => typeof x === typeof testtuple[0]);\n}\n"}
+{"task_id": "MBJSP/223", "language": "javascript", "completion": "  return arr.filter((a) => a === x).length > n / 2;\n}\n"}
+{"task_id": "MBJSP/224", "language": "javascript", "completion": "  return n.toString(2).split('').filter(x => x === '1').length;\n}\n"}
+{"task_id": "MBJSP/225", "language": "javascript", "completion": "  return arr[low];\n}\n"}
+{"task_id": "MBJSP/226", "language": "javascript", "completion": "  return str.split('').filter((char, index) => index % 2 !== 0).join('');\n}\n"}
+{"task_id": "MBJSP/227", "language": "javascript", "completion": "  return Math.min(a, b, c);\n}\n"}
+{"task_id": "MBJSP/228", "language": "javascript", "completion": "  return (n & (1 << l) - 1) === (1 << r) - 1;\n}\n"}
+{"task_id": "MBJSP/229", "language": "javascript", "completion": "  return arr.sort((a, b) => (a < 0 && b < 0 ? a - b : a - b));\n}\n"}
+{"task_id": "MBJSP/230", "language": "javascript", "completion": "\treturn str1.replace(/\\s/g, ch);\n}\n"}
+{"task_id": "MBJSP/231", "language": "javascript", "completion": "  let max = 0;\n  for (let i = 0; i < n; i++) {\n    let sum = 0;\n    for (let j = 0; j <= i; j++) {\n      sum += tri[i][j];\n    }\n    max = Math.max(max, sum);\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/232", "language": "javascript", "completion": "  return list1.sort((a, b) => b - a).slice(0, n);\n}\n"}
+{"task_id": "MBJSP/233", "language": "javascript", "completion": "  return Math.PI * r * r + Math.PI * r * h;\n}\n"}
+{"task_id": "MBJSP/234", "language": "javascript", "completion": "  return l * l * l;\n}\n"}
+{"task_id": "MBJSP/235", "language": "javascript", "completion": "  return n | (n >> 1);\n}\n"}
+{"task_id": "MBJSP/236", "language": "javascript", "completion": "  return (n * (n - 1) * (n - 2)) / (2 * (k - 1));\n}\n"}
+{"task_id": "MBJSP/237", "language": "javascript", "completion": "  return testlist.reduce((acc, cur) => {\n    const key = `[${cur[0]}, ${cur[1]}]`;\n    acc[key] = (acc[key] || 0) + 1;\n    return acc;\n  }, {});\n}\n"}
+{"task_id": "MBJSP/238", "language": "javascript", "completion": "  return str.length * (str.length + 1) / 2;\n}\n"}
+{"task_id": "MBJSP/239", "language": "javascript", "completion": "  return (m - n + 1) * (m - n + 2) / 2;\n}\n"}
+{"task_id": "MBJSP/240", "language": "javascript", "completion": "  return list1.slice(0, list1.length - 1).concat(list2);\n}\n"}
+{"task_id": "MBJSP/241", "language": "javascript", "completion": "  return Array.from({ length: m }, () =>\n    Array.from({ length: n }, () => Array.from({ length: o }, () => \"*\"))\n  );\n}\n"}
+{"task_id": "MBJSP/242", "language": "javascript", "completion": "  return str1.length;\n}\n"}
+{"task_id": "MBJSP/243", "language": "javascript", "completion": "  return lst.sort((a, b) => {\n    return a[0] - b[0] || a[1].localeCompare(b[1]);\n  });\n}\n"}
+{"task_id": "MBJSP/244", "language": "javascript", "completion": "  return Math.ceil(Math.sqrt(n)) ** 2;\n}\n"}
+{"task_id": "MBJSP/245", "language": "javascript", "completion": "  let max = 0;\n  for (let i = 0; i < arr.length - n + 1; i++) {\n    let sum = 0;\n    for (let j = i; j < i + n; j++) {\n      sum += arr[j];\n    }\n    max = Math.max(max, sum);\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/246", "language": "javascript", "completion": "  return Math.sqrt(number);\n}\n"}
+{"task_id": "MBJSP/247", "language": "javascript", "completion": "  let max = 0;\n  for (let i = 0; i < str.length; i++) {\n    for (let j = i + 1; j < str.length + 1; j++) {\n      if (str.substring(i, j) === str.substring(i, j).split(\"\").reverse().join(\"\")) {\n        max = Math.max(max, j - i);\n      }\n    }\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/248", "language": "javascript", "completion": "  return n === 1 ? 1 : 1 / (n - 1) + harmonicSum(n - 1);\n}\n"}
+{"task_id": "MBJSP/249", "language": "javascript", "completion": "  return arraynums1.filter((x) => arraynums2.includes(x));\n}\n"}
+{"task_id": "MBJSP/250", "language": "javascript", "completion": "  return tup.filter(v => v === x).length;\n}\n"}
+{"task_id": "MBJSP/251", "language": "javascript", "completion": "  return list.map((item) => `${element}${item}`);\n}\n"}
+{"task_id": "MBJSP/252", "language": "javascript", "completion": "  return [Math.sqrt(numbers * numbers), Math.atan(numbers)];\n}\n"}
+{"task_id": "MBJSP/253", "language": "javascript", "completion": "  return list1.filter(x => Number.isInteger(x)).length;\n}\n"}
+{"task_id": "MBJSP/254", "language": "javascript", "completion": "  return text.split(\" \").filter(word => word.startsWith(\"a\") || word.startsWith(\"e\"));\n}\n"}
+{"task_id": "MBJSP/255", "language": "javascript", "completion": "  return l.reduce((a, c) => a.concat(new Array(n).fill(c)), []);\n}\n"}
+{"task_id": "MBJSP/256", "language": "javascript", "completion": "  let count = 0;\n  for (let i = 2; i < n; i++) {\n    if (isPrime(i)) count++;\n  }\n  return count;\n}\n\nfunction isPrime(n) {\n  for (let i = 2; i < n; i++) {\n    if (n % i === 0) return false;\n  }\n  return true;\n}\n"}
+{"task_id": "MBJSP/257", "language": "javascript", "completion": "  return [b, a];\n}\n"}
+{"task_id": "MBJSP/258", "language": "javascript", "completion": "  // your code goes here\n  return arraynums.filter((x) => x % 2 !== 0).length;\n}\n"}
+{"task_id": "MBJSP/259", "language": "javascript", "completion": "  return testtup1.map((tup, i) => [Math.max(tup[0], testtup2[i][0]), Math.max(tup[1], testtup2[i][1])]);\n}\n"}
+{"task_id": "MBJSP/260", "language": "javascript", "completion": "  // your code here\n  let ans = 1;\n  for (let i = 2; i < n; i++) {\n    ans = ans * 2 + 1;\n  }\n  return ans;\n}\n"}
+{"task_id": "MBJSP/261", "language": "javascript", "completion": "  return testtup1.map((val, idx) => val / testtup2[idx]);\n}\n"}
+{"task_id": "MBJSP/262", "language": "javascript", "completion": "  return [list1.slice(0, l), list1.slice(l)];\n}\n"}
+{"task_id": "MBJSP/263", "language": "javascript", "completion": "  return Object.assign({}, d1, d2);\n}\n"}
+{"task_id": "MBJSP/264", "language": "javascript", "completion": "  return hage * 7;\n}\n"}
+{"task_id": "MBJSP/265", "language": "javascript", "completion": "  return s.reduce((acc, cur, i) => {\n    if (i % step === 0) {\n      acc.push([]);\n    }\n    acc[acc.length - 1].push(cur);\n    return acc;\n  }, []);\n}\n"}
+{"task_id": "MBJSP/266", "language": "javascript", "completion": "  return 6 * l * l;\n}\n"}
+{"task_id": "MBJSP/267", "language": "javascript", "completion": "  // your code goes here\n  let sum = 0;\n  for (let i = 1; i <= n; i += 2) {\n    sum += i * i;\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/268", "language": "javascript", "completion": "  return n * (n + 1) / 2;\n}\n"}
+{"task_id": "MBJSP/269", "language": "javascript", "completion": "  return k.charCodeAt(0);\n}\n"}
+{"task_id": "MBJSP/270", "language": "javascript", "completion": "  return arr.filter((_, i) => i % 2 === 0).reduce((a, b) => a + b, 0);\n}\n"}
+{"task_id": "MBJSP/271", "language": "javascript", "completion": "  // your code goes here\n  let sum = 0;\n  for (let i = 2; i <= n; i += 2) {\n    sum += Math.pow(i, 5);\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/272", "language": "javascript", "completion": "  return testlist.map(([_, _, rear]) => rear);\n}\n"}
+{"task_id": "MBJSP/273", "language": "javascript", "completion": "  return testtup1.map((val, idx) => val - testtup2[idx]);\n}\n"}
+{"task_id": "MBJSP/274", "language": "javascript", "completion": "  let sum = 0;\n  for (let i = 0; i <= n; i += 2) {\n    sum += binomialCoeff(n, i);\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/275", "language": "javascript", "completion": "  return a.indexOf(n, m);\n}\n"}
+{"task_id": "MBJSP/276", "language": "javascript", "completion": "  return Math.PI * r * r * h;\n}\n"}
+{"task_id": "MBJSP/277", "language": "javascript", "completion": "  return Object.fromEntries(Object.entries(dict).filter(([_, v]) => v >= n));\n}\n"}
+{"task_id": "MBJSP/278", "language": "javascript", "completion": "  // Your code here\n  let count = 0;\n  for (let i = 0; i < testtup.length; i++) {\n    if (Array.isArray(testtup[i])) {\n      count += i;\n      break;\n    } else {\n      count++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/279", "language": "javascript", "completion": "  return n * (3 * n - 1) / 2;\n}\n"}
+{"task_id": "MBJSP/280", "language": "javascript", "completion": "  for (let i = 0; i < dlist.length; i++) {\n    if (dlist[i] === item) {\n      return [true, i];\n    }\n  }\n  return [false, -1];\n}\n"}
+{"task_id": "MBJSP/281", "language": "javascript", "completion": "  return testlist.length === new Set(testlist).size;\n}\n"}
+{"task_id": "MBJSP/282", "language": "javascript", "completion": "  return nums1.map((num, i) => num - nums2[i]);\n}\n"}
+{"task_id": "MBJSP/283", "language": "javascript", "completion": "  return n.toString().split('').every(x => x.length <= +x);\n}\n"}
+{"task_id": "MBJSP/284", "language": "javascript", "completion": "  return list.every(item => item === element);\n}\n"}
+{"task_id": "MBJSP/285", "language": "javascript", "completion": "  return text.match(/a.{2,3}b/) ? \"Found a match!\" : \"Not matched!\";\n}\n"}
+{"task_id": "MBJSP/286", "language": "javascript", "completion": "  let maxSum = 0;\n  for (let i = 0; i < a.length; i++) {\n    let sum = 0;\n    for (let j = i; j < a.length; j++) {\n      sum += a[j];\n      if (j - i + 1 > n) {\n        sum -= a[i];\n        i++;\n      }\n      if (j - i + 1 === n) {\n        maxSum = Math.max(maxSum, sum * k);\n      }\n    }\n  }\n  return maxSum;\n}\n"}
+{"task_id": "MBJSP/287", "language": "javascript", "completion": "  return n * (n + 1) * (2 * n + 1) / 6;\n}\n"}
+{"task_id": "MBJSP/288", "language": "javascript", "completion": "  return arr.filter(x => x % n === p - 1).length;\n}\n"}
+{"task_id": "MBJSP/289", "language": "javascript", "completion": "  return (n % 2 === 0 ? n : n - 1) / 2;\n}\n"}
+{"task_id": "MBJSP/290", "language": "javascript", "completion": "  return list1.reduce((a, b) => (a[0] >= b.length ? a : [b.length, b]), [0, []])\n}\n"}
+{"task_id": "MBJSP/291", "language": "javascript", "completion": "  let ways = 0;\n  for (let i = 0; i < k; i++) {\n    for (let j = 0; j < k; j++) {\n      if (i !== j) {\n        ways += Math.pow(2, n - 2);\n      }\n    }\n  }\n  return ways;\n}\n"}
+{"task_id": "MBJSP/292", "language": "javascript", "completion": "  return n / m;\n}\n"}
+{"task_id": "MBJSP/293", "language": "javascript", "completion": "  return Math.sqrt(w * w + h * h);\n}\n"}
+{"task_id": "MBJSP/294", "language": "javascript", "completion": "  return Math.max(...listval);\n}\n"}
+{"task_id": "MBJSP/295", "language": "javascript", "completion": "  // Your code here\n  let sum = 0;\n  for (let i = 1; i <= number; i++) {\n    if (number % i == 0) sum += i;\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/296", "language": "javascript", "completion": "  let count = 0;\n  for (let i = 0; i < n - 1; i++) {\n    for (let j = i + 1; j < n; j++) {\n      if (arr[i] > arr[j]) count++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/297", "language": "javascript", "completion": "  return list1.reduce((acc, val) => acc.concat(Array.isArray(val) ? flattenList(val) : val), []);\n}\n"}
+{"task_id": "MBJSP/298", "language": "javascript", "completion": "  return l1.map((v) => (v.filter((x) => l2.some((y) => y.includes(x))).length ? v.filter((x) => l2.some((y) => y.includes(x))) : []));\n}\n"}
+{"task_id": "MBJSP/299", "language": "javascript", "completion": "  return stdata.reduce((a, b) => (a[1] > b[1] ? a : b));\n}\n"}
+{"task_id": "MBJSP/300", "language": "javascript", "completion": "\treturn 2 ** n;\n}\n"}
+{"task_id": "MBJSP/301", "language": "javascript", "completion": "  return Object.keys(d).reduce((a, b) => {\n    return typeof d[b] === 'object' ? Math.max(a, dictDepth(d[b]) + 1) : a;\n  }, 0);\n}\n"}
+{"task_id": "MBJSP/302", "language": "javascript", "completion": "  return n & -n;\n}\n"}
+{"task_id": "MBJSP/303", "language": "javascript", "completion": "  let count = 0;\n  for (let i = 0; i < n - 1; i++) {\n    for (let j = i + 1; j < n; j++) {\n      if (a[i] > a[j]) count++;\n    }\n  }\n  return count % 2 === 0;\n}\n"}
+{"task_id": "MBJSP/304", "language": "javascript", "completion": "  for (let i = 0; i < rotations; i++) {\n    arr.unshift(arr.pop());\n  }\n  return arr[index];\n}\n"}
+{"task_id": "MBJSP/305", "language": "javascript", "completion": "  // Your code here\n  return words.filter((word) => word.startsWith(\"P\"));\n}\n"}
+{"task_id": "MBJSP/306", "language": "javascript", "completion": "  let max = 0;\n  for (let i = index; i < k; i++) {\n    max += a[i];\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/307", "language": "javascript", "completion": "  return tuplex.map((x, i) => (i === m ? n : x));\n}\n"}
+{"task_id": "MBJSP/308", "language": "javascript", "completion": "  return nums1.map((num, i) => num * nums2[i]).sort((a, b) => b - a).slice(0, n);\n}\n"}
+{"task_id": "MBJSP/309", "language": "javascript", "completion": "  return Math.max(a, b);\n}\n"}
+{"task_id": "MBJSP/310", "language": "javascript", "completion": "  return str1.split(\"\");\n}\n"}
+{"task_id": "MBJSP/311", "language": "javascript", "completion": "  return n | (n + 1);\n}\n"}
+{"task_id": "MBJSP/312", "language": "javascript", "completion": "  return (Math.PI * r * r * h) / 3;\n}\n"}
+{"task_id": "MBJSP/313", "language": "javascript", "completion": "  // your code goes here\n  return list1.filter((x) => x > 0);\n}\n"}
+{"task_id": "MBJSP/314", "language": "javascript", "completion": "  let maxSum = 0;\n  for (let i = 0; i < grid.length; i++) {\n    for (let j = 0; j < n; j++) {\n      maxSum = Math.max(maxSum, grid[i][j] + grid[i][j + 1] + grid[i][j + 2]);\n    }\n  }\n  return maxSum;\n}\n"}
+{"task_id": "MBJSP/315", "language": "javascript", "completion": "  return str.split(\" \").reduce((a, b) => (a.length > b.length ? a : b)).match(/[aeiou]/gi) ? str.split(\" \").reduce((a, b) => (a.length > b.length ? a : b)) : \"-1\";\n}\n"}
+{"task_id": "MBJSP/316", "language": "javascript", "completion": "  return a.lastIndexOf(x);\n}\n"}
+{"task_id": "MBJSP/317", "language": "javascript", "completion": "  return alist.map((x) => (typeof x === \"number\" ? [1, x] : x));\n}\n"}
+{"task_id": "MBJSP/318", "language": "javascript", "completion": "  return Math.pow(s, 3) / 12;\n}\n"}
+{"task_id": "MBJSP/319", "language": "javascript", "completion": "\treturn text.match(/[a-z]{5}/gi);\n}\n"}
+{"task_id": "MBJSP/320", "language": "javascript", "completion": "  // Your code here\n  return (n * (n + 1) * (2 * n + 1)) / 6 - (n * (n + 1) * (n + 2)) / 3;\n}\n"}
+{"task_id": "MBJSP/321", "language": "javascript", "completion": "  return s.split(\"\").map((x) => (x === \"1\" ? \"1234\" : \"56789\")[x]).join(\"\");\n}\n"}
+{"task_id": "MBJSP/322", "language": "javascript", "completion": "  return list1.reduce((acc, curr, i) => {\n    if (curr === Math.min(...list1)) {\n      acc.push(i);\n    }\n    return acc;\n  }, []);\n}\n"}
+{"task_id": "MBJSP/323", "language": "javascript", "completion": "  return arr.slice(0, n).sort((a, b) => a - b).concat(arr.slice(n).sort((a, b) => b - a));\n}\n"}
+{"task_id": "MBJSP/324", "language": "javascript", "completion": "  // Your code here\n  let res = [];\n  for (let i = 0; i < testtuple.length; i += 2) {\n    res.push(testtuple.slice(i, i + 2).reduce((a, b) => a + b));\n  }\n  return res;\n}\n"}
+{"task_id": "MBJSP/325", "language": "javascript", "completion": "  return Math.floor(Math.sqrt(n));\n}\n"}
+{"task_id": "MBJSP/326", "language": "javascript", "completion": "  return testlist.reduce((a, b) => {\n    const countA = (a.match(/\\b(\\w+)\\b/g) || []).length;\n    const countB = (b.match(/\\b(\\w+)\\b/g) || []).length;\n    return countA > countB ? a : b;\n  });\n}\n"}
+{"task_id": "MBJSP/327", "language": "javascript", "completion": "  return x === y || x === z || y === z;\n}\n"}
+{"task_id": "MBJSP/328", "language": "javascript", "completion": "  return list1.slice(m).concat(list1.slice(0, m));\n}\n"}
+{"task_id": "MBJSP/329", "language": "javascript", "completion": "  // your code here\n  return list.filter((x) => x < 0).length;\n}\n"}
+{"task_id": "MBJSP/330", "language": "javascript", "completion": "  return text.match(/[a-z]{3,5}/gi);\n}\n"}
+{"task_id": "MBJSP/331", "language": "javascript", "completion": "  return n.toString(2).replace(/0/g, '').length;\n}\n"}
+{"task_id": "MBJSP/332", "language": "javascript", "completion": "  return str1.split(\"\").reduce((acc, curr) => {\n    acc[curr] = (acc[curr] || 0) + 1;\n    return acc;\n  }, {});\n}\n"}
+{"task_id": "MBJSP/333", "language": "javascript", "completion": "  return subli.sort((a, b) => a[1] - b[1]);\n}\n"}
+{"task_id": "MBJSP/334", "language": "javascript", "completion": "  return a + b > c && a + c > b && b + c > a;\n}\n"}
+{"task_id": "MBJSP/335", "language": "javascript", "completion": "  return (n * (n - 1) / 2) * d + a * (n - 1) * d;\n}\n"}
+{"task_id": "MBJSP/336", "language": "javascript", "completion": "  return monthname1 === \"February\" ? true : false;\n}\n"}
+{"task_id": "MBJSP/337", "language": "javascript", "completion": "  // Your code here\n  return text.match(/lang\\s*$/) ? \"Found a match!\" : \"Not matched!\";\n}\n"}
+{"task_id": "MBJSP/338", "language": "javascript", "completion": "  // your code goes here\n  let count = 0;\n  for (let i = 0; i < s.length; i++) {\n    for (let j = i + 1; j < s.length; j++) {\n      if (s[i] === s[j]) count++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/339", "language": "javascript", "completion": "  // your code goes here\n  let max = 0;\n  for (let i = x; i <= y; i++) {\n    let count = 0;\n    for (let j = 1; j <= i; j++) {\n      if (i % j === 0) count++;\n    }\n    if (count > max) max = count;\n  }\n  for (let i = x; i <= y; i++) {\n    let count = 0;\n    for (let j = 1; j <= i; j++) {\n      if (i % j === 0) count++;\n    }\n    if (count === max) return i;\n  }\n}\n"}
+{"task_id": "MBJSP/340", "language": "javascript", "completion": "  return lst.sort((a, b) => a - b).slice(0, 3).reduce((a, b) => a + b);\n}\n"}
+{"task_id": "MBJSP/341", "language": "javascript", "completion": "  return [...s];\n}\n"}
+{"task_id": "MBJSP/342", "language": "javascript", "completion": "  let min = Infinity;\n  let max = -Infinity;\n  for (let i = 0; i < list.length; i++) {\n    for (let j = 0; j < list[i].length; j++) {\n      min = Math.min(min, list[i][j]);\n      max = Math.max(max, list[i][j]);\n    }\n  }\n  return [min, max];\n}\n"}
+{"task_id": "MBJSP/343", "language": "javascript", "completion": "  return [s.length, s.replace(/[0-9]/g, \"\").length];\n}\n"}
+{"task_id": "MBJSP/344", "language": "javascript", "completion": "  // your code goes here\n  let count = 0;\n  for (let i = n; i <= m; i++) {\n    if (i % 2 !== 0) {\n      count++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/345", "language": "javascript", "completion": "  return nums.map((num, i, arr) => (i === arr.length - 1 ? 0 : num - arr[i + 1]));\n}\n"}
+{"task_id": "MBJSP/346", "language": "javascript", "completion": "  return n - k + 1;\n}\n"}
+{"task_id": "MBJSP/347", "language": "javascript", "completion": "  return m * n;\n}\n\n"}
+{"task_id": "MBJSP/348", "language": "javascript", "completion": "  let ways = 0;\n  for (let i = 1; i <= m; i++) {\n    ways += Math.pow(2, i - 1);\n  }\n  return ways;\n}\n"}
+{"task_id": "MBJSP/349", "language": "javascript", "completion": "  return /^[01]+$/.test(string) ? \"Yes\" : \"No\";\n}\n"}
+{"task_id": "MBJSP/350", "language": "javascript", "completion": "  // your code goes here\n  let count = 0;\n  let arr = s.split(\"\");\n  let obj = {};\n  for (let i = 0; i < arr.length; i++) {\n    if (obj[arr[i]]) {\n      obj[arr[i]]++;\n    } else {\n      obj[arr[i]] = 1;\n    }\n  }\n  for (let key in obj) {\n    if (obj[key] === 1) {\n      count++;\n    }\n  }\n  return s.length - count;\n}\n"}
+{"task_id": "MBJSP/351", "language": "javascript", "completion": "  return arr.filter((x, i) => arr.indexOf(x) === i && arr.indexOf(x) < n).find((x, i) => i % k === 0);\n}\n"}
+{"task_id": "MBJSP/352", "language": "javascript", "completion": "  return [...new Set(str)].length === str.length;\n}\n"}
+{"task_id": "MBJSP/353", "language": "javascript", "completion": "  return list1.map(list2 => list2.filter((_, i) => i !== n));\n}\n"}
+{"task_id": "MBJSP/354", "language": "javascript", "completion": "  return a + (n - 1) * d;\n}\n"}
+{"task_id": "MBJSP/355", "language": "javascript", "completion": "  return Math.PI * radius * radius;\n}\n"}
+{"task_id": "MBJSP/356", "language": "javascript", "completion": "  return 180 - a - b;\n}\n"}
+{"task_id": "MBJSP/357", "language": "javascript", "completion": "  return Math.max(...testlist.map(([a, b]) => a > b ? a : b));\n}\n"}
+{"task_id": "MBJSP/358", "language": "javascript", "completion": "  return nums1.map((num1) => num1 % nums2[nums1.indexOf(num1)]);\n}\n"}
+{"task_id": "MBJSP/359", "language": "javascript", "completion": "  return (b * b - 4 * a * c) >= 0 ? \"Yes\" : \"No\";\n}\n"}
+{"task_id": "MBJSP/360", "language": "javascript", "completion": "  return n * (n + 1) * (n + 2) / 6;\n}\n"}
+{"task_id": "MBJSP/361", "language": "javascript", "completion": "  return list1.filter(function (list2) {\n    return list2.length > 0;\n  });\n}\n"}
+{"task_id": "MBJSP/362", "language": "javascript", "completion": "  return nums.reduce((a, b) => (a[b] ? ++a[b] : a[b] = 1, a), []).reduce((a, b) => (a[1] > b[1] ? a : b), [0, 0])[0];\n}\n"}
+{"task_id": "MBJSP/363", "language": "javascript", "completion": "  return testlist.map(list => list.map(num => num + k));\n}\n"}
+{"task_id": "MBJSP/364", "language": "javascript", "completion": "\tlet count = 0;\n\tfor (let i = 0; i < str.length; i++) {\n\t\tif (str[i] === str[i + 1]) {\n\t\t\tcount++;\n\t\t}\n\t}\n\treturn count;\n}\n"}
+{"task_id": "MBJSP/365", "language": "javascript", "completion": "  return n.toString().length;\n}\n"}
+{"task_id": "MBJSP/366", "language": "javascript", "completion": "  // your code goes here\n  let max = 0;\n  for (let i = 0; i < listnums.length - 1; i++) {\n    max = Math.max(max, listnums[i] * listnums[i + 1]);\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/368", "language": "javascript", "completion": "  return Array(n).fill(testtup);\n}\n"}
+{"task_id": "MBJSP/369", "language": "javascript", "completion": "  return 2 * (l * w + l * h + w * h);\n}\n"}
+{"task_id": "MBJSP/370", "language": "javascript", "completion": "  return price.sort((a, b) => parseFloat(a[1]) - parseFloat(b[1]));\n}\n"}
+{"task_id": "MBJSP/371", "language": "javascript", "completion": "  // your code here\n  let smallest = a[leftelement];\n  for (let i = leftelement; i <= rightelement; i++) {\n    if (a[i] !== a[i - 1] + 1) {\n      smallest = a[i] - 1;\n      break;\n    }\n  }\n  return smallest;\n}\n"}
+{"task_id": "MBJSP/372", "language": "javascript", "completion": "  // your code goes here\n  const heap = new Heap(nums, (a, b) => a - b);\n  return heap.sort();\n}\n"}
+{"task_id": "MBJSP/373", "language": "javascript", "completion": "  return l * w * h;\n}\n"}
+{"task_id": "MBJSP/374", "language": "javascript", "completion": "  return str.split(\"\").reduce((acc, char) => {\n    return acc.concat(acc.map((perm) => perm + char));\n  }, [str]);\n}\n"}
+{"task_id": "MBJSP/375", "language": "javascript", "completion": "  return Math.round(n / m) * m;\n}\n"}
+{"task_id": "MBJSP/376", "language": "javascript", "completion": "  return testtup.map((el, i, arr) => (arr.indexOf(el) === arr.lastIndexOf(el) ? el : \"MSP\"));\n}\n"}
+{"task_id": "MBJSP/377", "language": "javascript", "completion": "  return s.replace(new RegExp(c, 'g'), '');\n}\n"}
+{"task_id": "MBJSP/378", "language": "javascript", "completion": "  return [testlist.pop(), ...testlist];\n}\n"}
+{"task_id": "MBJSP/379", "language": "javascript", "completion": "  return 2 * (l * w + l * h + w * h);\n}\n"}
+{"task_id": "MBJSP/380", "language": "javascript", "completion": "  return Array.from({ length: rownum }, (_, i) =>\n    Array.from({ length: colnum }, (_, j) => i * colnum + j)\n  );\n}\n"}
+{"task_id": "MBJSP/381", "language": "javascript", "completion": "  return listdata.sort((a, b) => a[indexno] - b[indexno]);\n}\n"}
+{"task_id": "MBJSP/382", "language": "javascript", "completion": "  // your code goes here\n  let n = a.length;\n  let count = 0;\n  for (let i = 0; i < n - 1; i++) {\n    if (a[i] > a[i + 1]) {\n      count++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/383", "language": "javascript", "completion": "  return n ^ (n & 1);\n}\n"}
+{"task_id": "MBJSP/384", "language": "javascript", "completion": "  return arr.filter(x => x === Math.min(...arr)).length;\n}\n"}
+{"task_id": "MBJSP/385", "language": "javascript", "completion": "  if (n === 1) return 1;\n  return getPerrin(n - 1) + getPerrin(n - 2);\n}\n"}
+{"task_id": "MBJSP/386", "language": "javascript", "completion": "  let count = 0;\n  for (let i = 0; i < s.length; i++) {\n    if (s[i] === \"[\" && s[i + 1] === \"]\") {\n      count++;\n      i++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/387", "language": "javascript", "completion": "  return n.length % 2 === 0 ? \"Even\" : \"Odd\";\n}\n"}
+{"task_id": "MBJSP/388", "language": "javascript", "completion": "  return Math.pow(2, Math.floor(Math.log(n) / Math.log(2)));\n}\n"}
+{"task_id": "MBJSP/389", "language": "javascript", "completion": "  return n === 1 ? 2 : n === 2 ? 1 : findLucas(n - 1) + findLucas(n - 2);\n}\n"}
+{"task_id": "MBJSP/390", "language": "javascript", "completion": "  return list.map((item) => string.replace(\"{0}\", item));\n}\n"}
+{"task_id": "MBJSP/391", "language": "javascript", "completion": "  return l1.map((v, i) => ({ [v]: { [l2[i]]: l3[i] } }));\n}\n"}
+{"task_id": "MBJSP/392", "language": "javascript", "completion": "  return Math.max(n, getMaxSum(n / 2) + getMaxSum(n / 3) + getMaxSum(n / 4) + getMaxSum(n / 5));\n}\n"}
+{"task_id": "MBJSP/393", "language": "javascript", "completion": "  return inputlist.reduce(\n    (acc, list) => (list.length > acc[0] ? [list.length, list] : acc),\n    [0, []]\n  );\n}\n"}
+{"task_id": "MBJSP/394", "language": "javascript", "completion": "  return new Set(testtup).size === testtup.length;\n}\n"}
+{"task_id": "MBJSP/395", "language": "javascript", "completion": "  // your code goes here\n  let arr = str1.split(\"\");\n  let obj = {};\n  for (let i = 0; i < arr.length; i++) {\n    if (obj[arr[i]] === undefined) {\n      obj[arr[i]] = 1;\n    } else {\n      obj[arr[i]]++;\n    }\n  }\n  for (let i = 0; i < arr.length; i++) {\n    if (obj[arr[i]] === 1) {\n      return arr[i];\n    }\n  }\n  return null;\n}\n"}
+{"task_id": "MBJSP/396", "language": "javascript", "completion": "  return /^([a-z])\\1$/.test(string) ? \"Valid\" : \"Invalid\";\n}\n"}
+{"task_id": "MBJSP/397", "language": "javascript", "completion": "  return (a + b + c) / 3;\n}\n"}
+{"task_id": "MBJSP/398", "language": "javascript", "completion": "  return nums.reduce((a, b) => a + b.toString().split('').reduce((c, d) => c + +d, 0), 0);\n}\n"}
+{"task_id": "MBJSP/399", "language": "javascript", "completion": "  return testtup1.map((val, idx) => val ^ testtup2[idx]);\n}\n"}
+{"task_id": "MBJSP/400", "language": "javascript", "completion": "  return [...new Set(testlist.map((a) => a.sort()))].length;\n}\n"}
+{"task_id": "MBJSP/401", "language": "javascript", "completion": "  return testtup1.map((tup, i) => tup.map((val, j) => val + testtup2[i][j]));\n}\n"}
+{"task_id": "MBJSP/402", "language": "javascript", "completion": "  return (n * ncrModp(n - 1, r - 1, p)) % p;\n}\n"}
+{"task_id": "MBJSP/403", "language": "javascript", "completion": "  return /^(?:http(s)?:\\/\\/)?[\\w.-]+(?:\\.[\\w\\.-]+)+[\\w\\-\\._~:/?#[\\]@!\\$&'\\(\\)\\*\\+,;=.]+$/.test(\n    str\n  );\n}\n"}
+{"task_id": "MBJSP/404", "language": "javascript", "completion": "  return Math.min(a, b);\n}\n"}
+{"task_id": "MBJSP/405", "language": "javascript", "completion": "  return tuplex.includes(tuple1);\n}\n"}
+{"task_id": "MBJSP/406", "language": "javascript", "completion": "  return x % 2 === 0 ? \"Even Parity\" : \"Odd Parity\";\n}\n"}
+{"task_id": "MBJSP/407", "language": "javascript", "completion": "  let str = n.toString();\n  let arr = str.split('');\n  let max = Math.max(...arr);\n  let index = arr.indexOf(max);\n  arr.splice(index, 1);\n  arr.unshift(max);\n  return +arr.join('');\n}\n"}
+{"task_id": "MBJSP/408", "language": "javascript", "completion": "  return nums1.map((num1) => nums2.map((num2) => [num1, num2])).flat().sort((a, b) => a[0] - b[0]).slice(0, k);\n}\n"}
+{"task_id": "MBJSP/409", "language": "javascript", "completion": "  return Math.min(...list1.map(([a, b]) => a * b));\n}\n"}
+{"task_id": "MBJSP/410", "language": "javascript", "completion": "  return Math.min(...listval);\n}\n"}
+{"task_id": "MBJSP/411", "language": "javascript", "completion": "\treturn word.replace(/(_\\w)/g, (m) => m[1].toUpperCase());\n}\n"}
+{"task_id": "MBJSP/412", "language": "javascript", "completion": "  return l.filter(x => x % 2 === 0);\n}\n"}
+{"task_id": "MBJSP/413", "language": "javascript", "completion": "  return list1.map(x => x[n]);\n}\n"}
+{"task_id": "MBJSP/414", "language": "javascript", "completion": "  return list1.some(x => list2.includes(x));\n}\n"}
+{"task_id": "MBJSP/415", "language": "javascript", "completion": "  // your code goes here\n  let max = -Infinity;\n  let res = [];\n  for (let i = 0; i < arr.length; i++) {\n    for (let j = i + 1; j < arr.length; j++) {\n      if (arr[i] * arr[j] > max) {\n        max = arr[i] * arr[j];\n        res = [arr[i], arr[j]];\n      }\n    }\n  }\n  return res;\n}\n"}
+{"task_id": "MBJSP/416", "language": "javascript", "completion": "  if (n < 3) return n;\n  return Math.max(n % 3 + breaksum(n - 3), breaksum(n - 1));\n}\n"}
+{"task_id": "MBJSP/417", "language": "javascript", "completion": "  return input.reduce((acc, val) => {\n    const first = val[0];\n    const rest = val.slice(1);\n    const group = acc.find((group) => group[0] === first);\n    if (group) {\n      group.push(...rest);\n    } else {\n      acc.push([first, ...rest]);\n    }\n    return acc;\n  }, []);\n}\n"}
+{"task_id": "MBJSP/418", "language": "javascript", "completion": "  return lst.reduce((a, b) => (a.length > b.length ? a : b));\n}\n"}
+{"task_id": "MBJSP/419", "language": "javascript", "completion": "  // Your code here\n  return list1.map(x => Math.round(x)).reduce((a, b) => a + b, 0) * list1.length;\n}\n"}
+{"task_id": "MBJSP/420", "language": "javascript", "completion": "  return Array.from({ length: n }, (_, i) => i * 2 + 2).reduce((a, b) => a + Math.pow(b, 3), 0);\n}\n"}
+{"task_id": "MBJSP/421", "language": "javascript", "completion": "\treturn testtup.join(\"-\");\n}\n"}
+{"task_id": "MBJSP/422", "language": "javascript", "completion": "  // your code goes here\n  let sum = 0;\n  for (let i = 1; i <= n; i++) {\n    sum += Math.pow(i, 3);\n  }\n  return sum / n;\n}\n"}
+{"task_id": "MBJSP/423", "language": "javascript", "completion": "  let max = 0;\n  for (let i = 0; i < m; i++) {\n    for (let j = 0; j < n; j++) {\n      if (i === 0 || j === 0) {\n        max += gold[i][j];\n      } else {\n        max += Math.max(gold[i][j], gold[i - 1][j], gold[i][j - 1], gold[i - 1][j - 1]);\n      }\n    }\n  }\n  return max;\n}\n"}
+{"task_id": "MBJSP/424", "language": "javascript", "completion": "  return testtuple.map(s => s.slice(-1));\n}\n"}
+{"task_id": "MBJSP/425", "language": "javascript", "completion": "  return list1.reduce((a, b) => a + (b.includes(x) ? 1 : 0), 0);\n}\n"}
+{"task_id": "MBJSP/426", "language": "javascript", "completion": "  return nums.filter((num) => num % 2 !== 0);\n}\n"}
+{"task_id": "MBJSP/427", "language": "javascript", "completion": "\treturn dt.replace(/(\\d{4})-(\\d{2})-(\\d{2})/, \"$3-$2-$1\");\n}\n"}
+{"task_id": "MBJSP/428", "language": "javascript", "completion": "  for (let gap = Math.floor(mylist.length / 2); gap > 0; gap = Math.floor(gap / 2)) {\n    for (let i = gap; i < mylist.length; i++) {\n      let temp = mylist[i];\n      for (let j = i; j >= gap && mylist[j - gap] > temp; j -= gap) {\n        mylist[j] = mylist[j - gap];\n      }\n      mylist[j] = temp;\n    }\n  }\n  return mylist;\n}\n"}
+{"task_id": "MBJSP/429", "language": "javascript", "completion": "  return testtup1.map((v, i) => v & testtup2[i]);\n}\n"}
+{"task_id": "MBJSP/430", "language": "javascript", "completion": "  return -b / (2 * a);\n}\n"}
+{"task_id": "MBJSP/431", "language": "javascript", "completion": "  // your code here\n  return list1.some((x) => list2.includes(x));\n}\n"}
+{"task_id": "MBJSP/432", "language": "javascript", "completion": "  return (base1 + base2) / 2 * height;\n}\n"}
+{"task_id": "MBJSP/433", "language": "javascript", "completion": "  // Your code goes here\n  return arr.every((x) => x <= number) ? \"Yes, the entered number is greater than those in the array\" : \"No, entered number is less than those in the array\";\n}\n"}
+{"task_id": "MBJSP/434", "language": "javascript", "completion": "  // Your code here\n  return text.match(/a.*b/) ? \"Found a match!\" : \"Not matched!\";\n}\n"}
+{"task_id": "MBJSP/435", "language": "javascript", "completion": "  return +(n.toString().slice(-1));\n}\n"}
+{"task_id": "MBJSP/436", "language": "javascript", "completion": "  return list1.filter(x => x < 0);\n}\n"}
+{"task_id": "MBJSP/437", "language": "javascript", "completion": "  return str1.replace(/[^aeiou]/g, \"\");\n}\n"}
+{"task_id": "MBJSP/438", "language": "javascript", "completion": "  return testlist.filter(([a, b]) => a === b).length;\n}\n"}
+{"task_id": "MBJSP/439", "language": "javascript", "completion": "  // Your code here\n  return l.reduce((a, b) => a * 10 + b);\n}\n"}
+{"task_id": "MBJSP/440", "language": "javascript", "completion": "  return text.split(\" \").map((word, index) => {\n    if (word.endsWith(\"!!\")) {\n      return [index, word.length - 2, word.slice(0, -2)];\n    }\n  });\n}\n"}
+{"task_id": "MBJSP/441", "language": "javascript", "completion": "  return 6 * l * l;\n}\n"}
+{"task_id": "MBJSP/442", "language": "javascript", "completion": "  return nums.filter(num => num > 0).length / nums.length;\n}\n"}
+{"task_id": "MBJSP/443", "language": "javascript", "completion": "  return Math.max.apply(null, list1.filter(function(x) { return x < 0; }));\n}\n"}
+{"task_id": "MBJSP/444", "language": "javascript", "completion": "  return JSON.stringify(testlist.map(a => a.slice(k)));\n}\n"}
+{"task_id": "MBJSP/445", "language": "javascript", "completion": "  return testtup1.map((arr, i) => arr.map((val, j) => val * testtup2[i][j]));\n}\n"}
+{"task_id": "MBJSP/446", "language": "javascript", "completion": "  return lst.reduce((a, c) => a + (tup.filter(x => x === c).length), 0);\n}\n"}
+{"task_id": "MBJSP/447", "language": "javascript", "completion": "  return nums.map(num => num ** 3);\n}\n"}
+{"task_id": "MBJSP/448", "language": "javascript", "completion": "  let sum = 0;\n  for (let i = 1; i <= n; i++) {\n    sum += Math.pow(i, 2) * (3 * i - 1) / 2;\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/449", "language": "javascript", "completion": "  return (\n    Math.abs(x1 - x2) * Math.abs(y1 - y3) +\n    Math.abs(x1 - x3) * Math.abs(y1 - y2) +\n    Math.abs(x2 - x3) * Math.abs(y2 - y1) !==\n    0\n      ? \"Yes\"\n      : \"No\"\n  );\n}\n"}
+{"task_id": "MBJSP/450", "language": "javascript", "completion": "  return str.slice(str.length - l);\n}\n"}
+{"task_id": "MBJSP/451", "language": "javascript", "completion": "\treturn text1.replace(/\\s/g, \"\");\n}\n"}
+{"task_id": "MBJSP/452", "language": "javascript", "completion": "  return actualcost - saleamount;\n}\n"}
+{"task_id": "MBJSP/453", "language": "javascript", "completion": "  // your code goes here\n  let sum = 0;\n  for (let i = 2; i <= n; i++) {\n    if (n % i === 0) {\n      if (i % 2 === 0) {\n        sum += i;\n      }\n    }\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/454", "language": "javascript", "completion": "  // Your code here\n  return text.includes(\"z\") ? \"Found a match!\" : \"Not matched!\";\n}\n"}
+{"task_id": "MBJSP/455", "language": "javascript", "completion": "  return monthnum2 === 2 || monthnum2 === 4 || monthnum2 === 6 || monthnum2 === 9 || monthnum2 === 11 ? false : true;\n}\n"}
+{"task_id": "MBJSP/456", "language": "javascript", "completion": "\treturn stringlist.map(x => x.split(\"\").reverse().join(\"\"));\n}\n"}
+{"task_id": "MBJSP/457", "language": "javascript", "completion": "  return lst.reduce((a, b) => a.length < b.length ? a : b);\n}\n"}
+{"task_id": "MBJSP/458", "language": "javascript", "completion": "  return l * b;\n}\n"}
+{"task_id": "MBJSP/459", "language": "javascript", "completion": "  return str1.replace(/[A-Z]/g, \"\");\n}\n"}
+{"task_id": "MBJSP/460", "language": "javascript", "completion": "  return lst.map(function (sublst) {\n    return sublst[0];\n  });\n}\n"}
+{"task_id": "MBJSP/461", "language": "javascript", "completion": "  // your code goes here\n  return str.length - str.toLowerCase().length;\n}\n"}
+{"task_id": "MBJSP/462", "language": "javascript", "completion": "  return list1.reduce((acc, item) => {\n    return acc.concat(acc.map(list => [...list, item]));\n  }, [[]]);\n}\n"}
+{"task_id": "MBJSP/463", "language": "javascript", "completion": "  let max = 0;\n  let min = 0;\n  let product = 1;\n\n  for (let i = 0; i < arr.length; i++) {\n    product *= arr[i];\n    max = Math.max(max, product);\n    min = Math.min(min, product);\n  }\n\n  return max;\n}\n"}
+{"task_id": "MBJSP/464", "language": "javascript", "completion": "  // your code here\n  return Object.values(dict).every(val => val === n);\n}\n"}
+{"task_id": "MBJSP/465", "language": "javascript", "completion": "  // your code goes here\n  return Object.fromEntries(Object.entries(dict1).filter(([_, v]) => v != null));\n}\n"}
+{"task_id": "MBJSP/466", "language": "javascript", "completion": "  for (let i = 1; i < n - 1; i++) {\n    if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) return i;\n  }\n  return -1;\n}\n"}
+{"task_id": "MBJSP/467", "language": "javascript", "completion": "  return (decinum).toString(8);\n}\n"}
+{"task_id": "MBJSP/468", "language": "javascript", "completion": "  let max = 1;\n  for (let i = 0; i < n; i++) {\n    max *= arr[i];\n  }\n  let min = 1;\n  for (let i = n - 1; i >= 0; i--) {\n    min *= arr[i];\n  }\n  return max * min;\n}\n"}
+{"task_id": "MBJSP/469", "language": "javascript", "completion": "  let maxProfit = 0;\n  for (let i = 1; i < price.length; i++) {\n    if (price[i] > price[i - 1]) {\n      maxProfit += price[i] - price[i - 1];\n    }\n  }\n  return maxProfit < 0 ? 0 : maxProfit;\n}\n"}
+{"task_id": "MBJSP/470", "language": "javascript", "completion": "  return testtup.map((val, idx) => val + testtup[idx + 1]);\n}\n"}
+{"task_id": "MBJSP/471", "language": "javascript", "completion": "  return arr.reduce((a, b) => a * b) % n;\n}\n"}
+{"task_id": "MBJSP/472", "language": "javascript", "completion": "  return l.every((v, i, a) => a[i + 1] - v === 1);\n}\n"}
+{"task_id": "MBJSP/473", "language": "javascript", "completion": "  return new Set(testlist1.reduce((a, b) => a.concat(b)).filter(x => testlist2.some(y => y.includes(x))));\n}\n"}
+{"task_id": "MBJSP/474", "language": "javascript", "completion": "  return str1.replace(ch, newch);\n}\n"}
+{"task_id": "MBJSP/475", "language": "javascript", "completion": "  return Object.entries(dict1).sort((a, b) => a[1] - b[1]);\n}\n"}
+{"task_id": "MBJSP/476", "language": "javascript", "completion": "  return nums.reduce((a, b) => a + b, 0);\n}\n"}
+{"task_id": "MBJSP/477", "language": "javascript", "completion": "  return string.toLowerCase();\n}\n"}
+{"task_id": "MBJSP/478", "language": "javascript", "completion": "\treturn str1.replace(/[a-z]/g, \"\");\n}\n"}
+{"task_id": "MBJSP/479", "language": "javascript", "completion": "  return parseInt(n.toString()[0]);\n}\n"}
+{"task_id": "MBJSP/480", "language": "javascript", "completion": "  return str1.split(\"\").reduce((a, b) => (a[b] ? ++a[b] : a[b] = 1, a), {})\n    .reduce((a, b) => (a[1] > b[1] ? a : b))[0];\n}\n"}
+{"task_id": "MBJSP/481", "language": "javascript", "completion": "  if (n === 0 && sum === 0) {\n    return true;\n  }\n  if (n === 0 || sum < 0) {\n    return false;\n  }\n  return isSubsetSum(set, n - 1, sum) || isSubsetSum(set, n - 1, sum - set[n - 1]);\n}\n"}
+{"task_id": "MBJSP/482", "language": "javascript", "completion": "\treturn /[A-Z][a-z]+/.test(text) ? \"Yes\" : \"No\";\n}\n"}
+{"task_id": "MBJSP/483", "language": "javascript", "completion": "  // your code here\n  let i = 1;\n  while (true) {\n    if (factorial(i) % x === 0) return i;\n    i++;\n  }\n}\n"}
+{"task_id": "MBJSP/484", "language": "javascript", "completion": "  return testlist1.filter(x => !testlist2.includes(x));\n}\n"}
+{"task_id": "MBJSP/485", "language": "javascript", "completion": "  return Math.max(...a.filter(x => x.toString().length === n && x.toString() === x.toString().split('').reverse().join('')));\n}\n"}
+{"task_id": "MBJSP/486", "language": "javascript", "completion": "  return (factorial(n) / (factorial(k) * factorial(n - k))) * Math.pow(p, k) * Math.pow(1 - p, n - k);\n}\n"}
+{"task_id": "MBJSP/487", "language": "javascript", "completion": "  return tup.sort((a, b) => a[1] - b[1]);\n}\n"}
+{"task_id": "MBJSP/488", "language": "javascript", "completion": "  return (5 * (Math.sqrt(2 * (5 * Math.pow(a, 2) - 10 * a + 4))) / 4).toFixed(12);\n}\n"}
+{"task_id": "MBJSP/489", "language": "javascript", "completion": "  return arr.filter(x => x === Math.max(...arr)).length / arr.length;\n}\n"}
+{"task_id": "MBJSP/490", "language": "javascript", "completion": "  return new Set(testlist.filter(([a, b]) => a === b));\n}\n"}
+{"task_id": "MBJSP/491", "language": "javascript", "completion": "  return (a * (1 - Math.pow(r, n)) / (1 - r)) | 0;\n}\n"}
+{"task_id": "MBJSP/492", "language": "javascript", "completion": "  let start = 0;\n  let end = itemlist.length - 1;\n  let mid;\n\n  while (start <= end) {\n    mid = Math.floor((start + end) / 2);\n    if (itemlist[mid] === item) {\n      return true;\n    } else if (itemlist[mid] < item) {\n      start = mid + 1;\n    } else {\n      end = mid - 1;\n    }\n  }\n  return false;\n}\n"}
+{"task_id": "MBJSP/493", "language": "javascript", "completion": "  const polygons = [];\n  for (let x = startx; x <= endx; x++) {\n    const y = Math.sqrt(Math.pow(radius, 2) - Math.pow((x - startx), 2));\n    const points = [];\n    for (let i = 0; i < 6; i++) {\n      points.push([x + (radius * Math.cos(i * 2 * Math.PI / 6)), y + (radius * Math.sin(i * 2 * Math.PI / 6))]);\n    }\n    polygons.push(points);\n  }\n  return polygons;\n}\n"}
+{"task_id": "MBJSP/494", "language": "javascript", "completion": "\treturn testtup.join(\"\").split(\"\").map(Number).reduce((a, b) => a * 2 + b);\n}\n"}
+{"task_id": "MBJSP/495", "language": "javascript", "completion": "\treturn str1.replace(/[a-z]/g, \"\");\n}\n"}
+{"task_id": "MBJSP/496", "language": "javascript", "completion": "  const heap = new Heap((a, b) => a - b);\n  for (let i = 0; i < n; i++) {\n    heap.push(nums[i]);\n  }\n  const result = [];\n  for (let i = 0; i < n; i++) {\n    result.push(heap.pop());\n  }\n  return result;\n}\n"}
+{"task_id": "MBJSP/497", "language": "javascript", "completion": "  return (Math.PI * r * r * h) + (Math.PI * r * r);\n}\n"}
+{"task_id": "MBJSP/498", "language": "javascript", "completion": "  return x % y ? gcd(y, x % y) : y;\n}\n"}
+{"task_id": "MBJSP/499", "language": "javascript", "completion": "  return 2 * r;\n}\n"}
+{"task_id": "MBJSP/500", "language": "javascript", "completion": "  // Your code here\n  return \" \" + list.join(\" \");\n}\n"}
+{"task_id": "MBJSP/501", "language": "javascript", "completion": "  // your code goes here\n  return x > y ? gcd(x, y) : gcd(y, x);\n}\n\nfunction gcd(a, b) {\n  return b === 0 ? a : gcd(b, a % b);\n}\n"}
+{"task_id": "MBJSP/502", "language": "javascript", "completion": "  return n % m;\n}\n"}
+{"task_id": "MBJSP/503", "language": "javascript", "completion": "  return nums.map((num, i) => num + nums[i + 1]);\n}\n"}
+{"task_id": "MBJSP/504", "language": "javascript", "completion": "  return n * (n + 1) * (2 * n + 1) / 6;\n}\n"}
+{"task_id": "MBJSP/505", "language": "javascript", "completion": "  return a.filter(Boolean).concat(a.filter(x => x === 0));\n}\n"}
+{"task_id": "MBJSP/506", "language": "javascript", "completion": "  return factorial(n) / factorial(n - k);\n}\n"}
+{"task_id": "MBJSP/507", "language": "javascript", "completion": "  return list1.filter(function (word) {\n    return !removewords.includes(word);\n  });\n}\n"}
+{"task_id": "MBJSP/508", "language": "javascript", "completion": "  return l1.every((v, i) => v === l2[i]);\n}\n"}
+{"task_id": "MBJSP/509", "language": "javascript", "completion": "  // your code goes here\n  let sum = 0;\n  for (let i = 1; i <= n; i += 2) {\n    sum += i;\n  }\n  return sum / n;\n}\n"}
+{"task_id": "MBJSP/510", "language": "javascript", "completion": "  let count = 0;\n  for (let i = 0; i < arr.length; i++) {\n    let product = 1;\n    for (let j = i; j < arr.length; j++) {\n      product *= arr[j];\n      if (product < k) count++;\n    }\n  }\n  return count;\n}\n"}
+{"task_id": "MBJSP/511", "language": "javascript", "completion": "  // your code goes here\n  let sum = 0;\n  for (let i = 1; i <= num; i++) {\n    if (num % i == 0) sum += i;\n  }\n  return sum;\n}\n"}
+{"task_id": "MBJSP/512", "language": "javascript", "completion": "  return testtuple.reduce((acc, curr) => {\n    if (Array.isArray(curr)) {\n      return { ...acc, ...countElementFreq(curr) };\n    }\n    return { ...acc, [curr]: (acc[curr] || 0) + 1 };\n  }, {});\n}\n"}
